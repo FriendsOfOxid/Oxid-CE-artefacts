@@ -1,0 +1,26 @@
+{
+  "name": "oxid-esales/gdpr-optin-module",
+  "description": "This is the GDPR opt-in module for the OXID eShop.",
+  "type": "oxideshop-module",
+  "keywords": ["oxid", "modules", "eShop"],
+  "homepage": "https://www.oxid-esales.com/en/home.html",
+  "license": [
+    "GPL-3.0-only"
+  ],
+  "extra": {
+    "oxideshop": {
+      "blacklist-filter": [
+        "documentation/**/*.*"
+      ],
+      "target-directory": "oe/gdproptin"
+    }
+  },
+  "require": {
+    "php": ">=7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "OxidEsales\\GdprOptinModule\\": "../../../source/modules/oe/gdproptin"
+    }
+  }
+}

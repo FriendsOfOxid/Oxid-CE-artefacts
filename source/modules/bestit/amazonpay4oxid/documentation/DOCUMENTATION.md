@@ -1,0 +1,1 @@
+The module documentation can be found at [https://bestitcon.zendesk.com/hc/de/categories/115000265369-Amazon-Pay-for-OXID](https://bestitcon.zendesk.com/hc/de/categories/115000265369-Amazon-Pay-for-OXID)

@@ -1,0 +1,2 @@
+INSERT INTO `oxobject2payment` (`OXID`, `OXPAYMENTID`, `OXOBJECTID`, `OXTYPE`) VALUES (MD5('bestitAmazon4OxidCountry'), 'bestitamazon', 'a7c40f631fc920687.20179984', 'oxcountry');
+INSERT INTO `oxobject2payment` (`OXID`, `OXPAYMENTID`, `OXOBJECTID`, `OXTYPE`) VALUES (MD5('bestitAmazon4OxidDeliverySet'), 'bestitamazon', 'oxidstandard', 'oxdelset');
