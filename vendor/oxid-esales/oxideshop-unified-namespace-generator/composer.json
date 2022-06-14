@@ -1,0 +1,32 @@
+{
+  "name": "oxid-esales/oxideshop-unified-namespace-generator",
+  "type": "composer-plugin",
+  "description": "OXID eShop related utility, which generates edition-specific class files for the 'unified namespace'",
+  "license": "GPL-3.0-only",
+  "minimum-stability": "dev",
+  "bin": [
+    "./oe-eshop-unified_namespace_generator"
+  ],
+  "prefer-stable": true,
+  "require": {
+    "php": ">=5.6",
+    "smarty/smarty": "^v2.6.30",
+    "oxid-esales/oxideshop-facts": "^2.4.0",
+    "composer-plugin-api": "^1.0 || ^2.0",
+    "composer/composer": "^1.0 || ^2.0",
+    "symfony/filesystem": "^3.3 || ^4.4.17"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.26",
+    "mikey179/vfsstream": "~1.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "OxidEsales\\UnifiedNameSpaceGenerator\\": "./src",
+      "OxidEsales\\Eshop\\": "./generated/OxidEsales/Eshop"
+    }
+  },
+  "extra": {
+    "class": "OxidEsales\\UnifiedNameSpaceGenerator\\Plugin"
+  }
+}
