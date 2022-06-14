@@ -1,0 +1,41 @@
+services:
+
+  _defaults:
+    public: false
+    autowire: true
+
+  OxidEsales\PayPalModule\GraphQL\Controller\:
+    resource: 'GraphQL/Controller/*'
+    public: true
+
+  OxidEsales\PayPalModule\GraphQL\Service\NamespaceMapper:
+    class: OxidEsales\PayPalModule\GraphQL\Service\NamespaceMapper
+    tags: [ 'graphql_namespace_mapper' ]
+
+  OxidEsales\PayPalModule\GraphQL\Subscriber\BeforePlaceOrder:
+    class: OxidEsales\PayPalModule\GraphQL\Subscriber\BeforePlaceOrder
+    tags: [ 'kernel.event_subscriber' ]
+
+  OxidEsales\PayPalModule\GraphQL\Subscriber\BeforeBasketPayments:
+    class: OxidEsales\PayPalModule\GraphQL\Subscriber\BeforeBasketPayments
+    tags: [ 'kernel.event_subscriber' ]
+
+  OxidEsales\PayPalModule\GraphQL\Service\Basket:
+    class: OxidEsales\PayPalModule\GraphQL\Service\Basket
+    public: true
+
+  OxidEsales\PayPalModule\GraphQL\Service\Payment:
+    class: OxidEsales\PayPalModule\GraphQL\Service\Payment
+    public: true
+
+  OxidEsales\PayPalModule\GraphQL\Service\BeforePlaceOrder:
+    class: OxidEsales\PayPalModule\GraphQL\Service\BeforePlaceOrder
+    public: true
+
+  OxidEsales\PayPalModule\GraphQL\Service\BasketExtendType:
+    class: OxidEsales\PayPalModule\GraphQL\Service\BasketExtendType
+    public: true
+
+  OxidEsales\PayPalModule\GraphQL\Service\PermissionProvider:
+    class: OxidEsales\PayPalModule\GraphQL\Service\PermissionProvider
+    tags: ['graphql_permission_provider']

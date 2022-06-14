@@ -1,0 +1,32 @@
+version: '3'
+services:
+  web:
+    build: docker/
+    image: web
+    container_name: web
+    working_dir: /var/www/module
+    links:
+      - "mysql:db"
+    volumes:
+      - .:/var/www/module
+    ports:
+      - "8100:80"
+      - "4444:443"
+    depends_on:
+      - mysql
+    environment:
+      APP_DIR: /var/www/html
+      MODULE_DIR: /var/www/module
+      HTTP_PORT: 8100
+      HTTPS_PORT: 4444
+      TRAVIS_ERROR_LEVEL: ${TRAVIS_ERROR_LEVEL}
+      DB_HOST: db
+      DB_NAME: oxidehop_ce
+      DB_USER: root
+      DB_PASS: dbpass
+  mysql:
+    image: mysql:5.6
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: oxidehop_ce
+      MYSQL_ROOT_PASSWORD: dbpass
