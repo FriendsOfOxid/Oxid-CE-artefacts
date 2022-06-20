@@ -1,6 +1,6 @@
 # Oxid CE v6.4.2 for PHP 8.0
 
-## date: 2022-06-14 11:04:56
+## date: 2022-06-21 01:15:23
 This is an artefact made with composer on PHP 8.0. You may upload this artefact to your server and can immediately run into the setup routine of Oxid
 
 ## contained packages
