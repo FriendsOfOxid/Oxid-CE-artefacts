@@ -421,177 +421,6 @@ modules:
       fcpayone_status_forwarding.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_status_forwarding.tpl
       fcpayone_status_mapping.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_status_mapping.tpl
       fcpayone_error_mapping.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_error_mapping.tpl
-  oxpspaymorrow:
-    id: oxpspaymorrow
-    path: oxps/paymorrow
-    version: 2.1.0
-    configured: false
-    title:
-      de: 'Paymorrow Zahlungen'
-      en: 'Paymorrow Payments'
-    description:
-      de: "<p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.de/\" title=\"Paymorrow-Homepage\" target=\"_blank\">>> Paymorrow-Homepage</a></p>\n        <p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.net/perthPortal/\" title=\"Paymorrow-H&auml;ndlerportal\" target=\"_blank\">>> Paymorrow-H&auml;ndlerportal</a></p>\n        <h2>Paymorrow-Plugin (OxpsOxid2Paymorrow)</h2>"
-      en: "<p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.de/\" title=\"Paymorrow-Homepage\" target=\"_blank\">>> Paymorrow-Homepage</a></p>\n        <p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.net/perthPortal/\" title=\"Paymorrow-H&auml;ndlerportal\" target=\"_blank\">>> Paymorrow-H&auml;ndlerportal</a></p>\n        <h2>Paymorrow-Plugin (OxpsOxid2Paymorrow)</h2>"
-    lang: ''
-    thumbnail: out/pictures/pmlogo.png
-    author: 'OXID Professional Services'
-    url: 'https://paymorrow.de/'
-    email: info@oxid-esales.com
-    classesWithoutNamespace:
-      oxpspaymorrowadminerrorlog: oxps/paymorrow/controllers/admin/oxpspaymorrowadminerrorlog.php
-      oxpspaymorrowpaymentmap: oxps/paymorrow/controllers/admin/oxpspaymorrowpaymentmap.php
-      oxpspaymorrowprepareorder: oxps/paymorrow/controllers/oxpspaymorrowprepareorder.php
-      oxpspaymorrowresource: oxps/paymorrow/controllers/oxpspaymorrowresource.php
-      oxpspaymorrowmodule: oxps/paymorrow/core/oxpspaymorrowmodule.php
-      oxpspaymorrowclient: oxps/paymorrow/core/oxpspaymorrowclient.php
-      oxpspaymorroweshopdataprovider: oxps/paymorrow/core/oxpspaymorroweshopdataprovider.php
-      oxpspaymorrowerrorhandler: oxps/paymorrow/core/oxpspaymorrowerrorhandler.php
-      oxpspaymorrowgateway: oxps/paymorrow/core/oxpspaymorrowgateway.php
-      oxpspaymorrowlogger: oxps/paymorrow/core/oxpspaymorrowlogger.php
-      oxpspaymorrowsettings: oxps/paymorrow/core/oxpspaymorrowsettings.php
-      oxpspaymorrowrequestcontrollerproxy: oxps/paymorrow/core/oxpspaymorrowrequestcontrollerproxy.php
-      oxpspaymorrowresourcecache: oxps/paymorrow/core/oxpspaymorrowresourcecache.php
-      oxpspaymorrowinit: oxps/paymorrow/components/widgets/oxpspaymorrowinit.php
-      oxpspaymorrowsessionmonitor: oxps/paymorrow/components/widgets/oxpspaymorrowsessionmonitor.php
-      oxpsoxid2paymorrow: oxps/paymorrow/core/oxpsoxid2paymorrow.php
-      oxpspaymorrowresponsehandler: oxps/paymorrow/core/oxpspaymorrowresponsehandler.php
-      paymorrowgateway: oxps/paymorrow/vendor/paymorrow_gateway/PaymorrowGateway.php
-      eshopdataprovider: oxps/paymorrow/vendor/paymorrow_gateway/EshopDataProvider.php
-      requestcontroller: oxps/paymorrow/vendor/paymorrow_gateway/RequestController.php
-      abstractpaymorrowclient: oxps/paymorrow/vendor/paymorrow_gateway/paymorrow_client/AbstractPaymorrowClient.php
-      paymorrowresourceproxy: oxps/paymorrow/vendor/paymorrow_gateway/PaymorrowResourceProxy.php
-    classExtensions:
-      OxidEsales\Eshop\Application\Controller\OrderController: oxps/paymorrow/controllers/oxpspaymorroworder
-      OxidEsales\Eshop\Application\Controller\PaymentController: oxps/paymorrow/controllers/oxpspaymorrowpayment
-      OxidEsales\Eshop\Core\ViewConfig: oxps/paymorrow/core/oxpspaymorrowoxviewconfig
-      OxidEsales\Eshop\Application\Model\Payment: oxps/paymorrow/models/oxpspaymorrowoxpayment
-      OxidEsales\Eshop\Application\Model\User: oxps/paymorrow/models/oxpspaymorrowoxuser
-      OxidEsales\Eshop\Application\Model\Order: oxps/paymorrow/models/oxpspaymorrowoxorder
-      OxidEsales\Eshop\Application\Model\BasketItem: oxps/paymorrow/models/oxpspaymorrowoxbasketitem
-      OxidEsales\Eshop\Application\Model\PaymentGateway: oxps/paymorrow/models/oxpspaymorrowoxpaymentgateway
-      OxidEsales\Eshop\Application\Model\UserPayment: oxps/paymorrow/models/oxpspaymorrowoxuserpayment
-      OxidEsales\Eshop\Application\Model\Basket: oxps/paymorrow/models/oxpspaymorrowoxbasket
-    events:
-      onActivate: 'OxpsPaymorrowModule::onActivate'
-      onDeactivate: 'OxpsPaymorrowModule::onDeactivate'
-    moduleSettings:
-      paymorrowSandboxMode:
-        group: oxpsPaymorrowConfiguration
-        type: bool
-        value: true
-      paymorrowMerchantId:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowMerchantIdTest:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowEndpointUrlProd:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: 'https://paymorrow.net/service/v2_1/'
-      paymorrowEndpointUrlTest:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: 'https://test.paymorrow.net/service/v2_1/'
-      paymorrowResourcePath:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: 'https://paymorrow.net/perthResource/jsmodule'
-      paymorrowResourcePathTest:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: 'https://test.paymorrow.net/perthResource/jsmodule'
-      paymorrowOperationMode:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: RISK_CHECK
-      paymorrowOperationModeTest:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: RISK_CHECK
-      paymorrowLoggingEnabled:
-        group: oxpsPaymorrowConfiguration
-        type: bool
-        value: false
-      paymorrowKeysJson:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowPrivateKey:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowPrivateKeyTest:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowPublicKey:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowPublicKeyTest:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowPaymorrowKey:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowPaymorrowKeyTest:
-        group: oxpsPaymorrowConfiguration
-        type: str
-        value: ''
-      paymorrowUpdateAddresses:
-        group: oxpsPaymorrowProfileUpdate
-        type: bool
-        value: true
-      paymorrowUpdatePhones:
-        group: oxpsPaymorrowProfileUpdate
-        type: bool
-        value: true
-    templateBlocks:
-      -
-        template: module_config.tpl
-        block: admin_module_config_form
-        file: views/admin/blocks/paymorrow_module_config.tpl
-      -
-        template: payment_main.tpl
-        block: admin_payment_main_form
-        file: views/admin/blocks/paymorrow_payment_main.tpl
-      -
-        template: page/checkout/payment.tpl
-        block: select_payment
-        file: views/blocks/paymorrow_select_payment.tpl
-      -
-        template: email/html/order_cust.tpl
-        block: email_html_order_cust_orderemailend
-        file: views/email/html/order_cust_pm_html_bank_details.tpl
-      -
-        template: email/plain/order_cust.tpl
-        block: email_plain_order_cust_orderemailend
-        file: views/email/plain/order_cust_pm_plain_bank_details.tpl
-      -
-        template: email/html/order_cust.tpl
-        block: email_html_order_cust_paymentinfo
-        file: views/email/html/order_cust_pm_html_paymentinfo.tpl
-      -
-        template: email/plain/order_cust.tpl
-        block: email_plain_order_cust_paymentinfo
-        file: views/email/plain/order_cust_pm_plain_paymentinfo.tpl
-      -
-        template: layout/footer.tpl
-        block: footer_main
-        file: views/blocks/paymorrow_footer.tpl
-    templates:
-      paymorrow_paymnet_validation.tpl: oxps/paymorrow/views/admin/inc/paymorrow_paymnet_validation.tpl
-      paymorrow_errorlog.tpl: oxps/paymorrow/views/admin/paymorrow_errorlog.tpl
-      paymorrow_paymentmap.tpl: oxps/paymorrow/views/admin/paymorrow_paymentmap.tpl
-      oxpspaymorrowinit.tpl: oxps/paymorrow/views/widget/oxpspaymorrowinit.tpl
-      oxpspaymorrowsessionmonitor.tpl: oxps/paymorrow/views/widget/oxpspaymorrowsessionmonitor.tpl
-      paymorrow_payment_direct_debit.tpl: oxps/paymorrow/views/page/checkout/inc/paymorrow_payment_direct_debit.tpl
-      paymorrow_payment_invoice.tpl: oxps/paymorrow/views/page/checkout/inc/paymorrow_payment_invoice.tpl
   oepaypal:
     id: oepaypal
     path: oe/oepaypal
@@ -902,6 +731,177 @@ modules:
       order_paypal.tpl: oe/oepaypal/views/admin/tpl/order_paypal.tpl
       ipnhandler.tpl: oe/oepaypal/views/tpl/ipnhandler.tpl
       installment_banners.tpl: oe/oepaypal/views/tpl/installment_banners.tpl
+  oxpspaymorrow:
+    id: oxpspaymorrow
+    path: oxps/paymorrow
+    version: 2.1.0
+    configured: false
+    title:
+      de: 'Paymorrow Zahlungen'
+      en: 'Paymorrow Payments'
+    description:
+      de: "<p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.de/\" title=\"Paymorrow-Homepage\" target=\"_blank\">>> Paymorrow-Homepage</a></p>\n        <p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.net/perthPortal/\" title=\"Paymorrow-H&auml;ndlerportal\" target=\"_blank\">>> Paymorrow-H&auml;ndlerportal</a></p>\n        <h2>Paymorrow-Plugin (OxpsOxid2Paymorrow)</h2>"
+      en: "<p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.de/\" title=\"Paymorrow-Homepage\" target=\"_blank\">>> Paymorrow-Homepage</a></p>\n        <p><a style=\"color: blue; text-decoration: underline;\" href=\"https://paymorrow.net/perthPortal/\" title=\"Paymorrow-H&auml;ndlerportal\" target=\"_blank\">>> Paymorrow-H&auml;ndlerportal</a></p>\n        <h2>Paymorrow-Plugin (OxpsOxid2Paymorrow)</h2>"
+    lang: ''
+    thumbnail: out/pictures/pmlogo.png
+    author: 'OXID Professional Services'
+    url: 'https://paymorrow.de/'
+    email: info@oxid-esales.com
+    classesWithoutNamespace:
+      oxpspaymorrowadminerrorlog: oxps/paymorrow/controllers/admin/oxpspaymorrowadminerrorlog.php
+      oxpspaymorrowpaymentmap: oxps/paymorrow/controllers/admin/oxpspaymorrowpaymentmap.php
+      oxpspaymorrowprepareorder: oxps/paymorrow/controllers/oxpspaymorrowprepareorder.php
+      oxpspaymorrowresource: oxps/paymorrow/controllers/oxpspaymorrowresource.php
+      oxpspaymorrowmodule: oxps/paymorrow/core/oxpspaymorrowmodule.php
+      oxpspaymorrowclient: oxps/paymorrow/core/oxpspaymorrowclient.php
+      oxpspaymorroweshopdataprovider: oxps/paymorrow/core/oxpspaymorroweshopdataprovider.php
+      oxpspaymorrowerrorhandler: oxps/paymorrow/core/oxpspaymorrowerrorhandler.php
+      oxpspaymorrowgateway: oxps/paymorrow/core/oxpspaymorrowgateway.php
+      oxpspaymorrowlogger: oxps/paymorrow/core/oxpspaymorrowlogger.php
+      oxpspaymorrowsettings: oxps/paymorrow/core/oxpspaymorrowsettings.php
+      oxpspaymorrowrequestcontrollerproxy: oxps/paymorrow/core/oxpspaymorrowrequestcontrollerproxy.php
+      oxpspaymorrowresourcecache: oxps/paymorrow/core/oxpspaymorrowresourcecache.php
+      oxpspaymorrowinit: oxps/paymorrow/components/widgets/oxpspaymorrowinit.php
+      oxpspaymorrowsessionmonitor: oxps/paymorrow/components/widgets/oxpspaymorrowsessionmonitor.php
+      oxpsoxid2paymorrow: oxps/paymorrow/core/oxpsoxid2paymorrow.php
+      oxpspaymorrowresponsehandler: oxps/paymorrow/core/oxpspaymorrowresponsehandler.php
+      paymorrowgateway: oxps/paymorrow/vendor/paymorrow_gateway/PaymorrowGateway.php
+      eshopdataprovider: oxps/paymorrow/vendor/paymorrow_gateway/EshopDataProvider.php
+      requestcontroller: oxps/paymorrow/vendor/paymorrow_gateway/RequestController.php
+      abstractpaymorrowclient: oxps/paymorrow/vendor/paymorrow_gateway/paymorrow_client/AbstractPaymorrowClient.php
+      paymorrowresourceproxy: oxps/paymorrow/vendor/paymorrow_gateway/PaymorrowResourceProxy.php
+    classExtensions:
+      OxidEsales\Eshop\Application\Controller\OrderController: oxps/paymorrow/controllers/oxpspaymorroworder
+      OxidEsales\Eshop\Application\Controller\PaymentController: oxps/paymorrow/controllers/oxpspaymorrowpayment
+      OxidEsales\Eshop\Core\ViewConfig: oxps/paymorrow/core/oxpspaymorrowoxviewconfig
+      OxidEsales\Eshop\Application\Model\Payment: oxps/paymorrow/models/oxpspaymorrowoxpayment
+      OxidEsales\Eshop\Application\Model\User: oxps/paymorrow/models/oxpspaymorrowoxuser
+      OxidEsales\Eshop\Application\Model\Order: oxps/paymorrow/models/oxpspaymorrowoxorder
+      OxidEsales\Eshop\Application\Model\BasketItem: oxps/paymorrow/models/oxpspaymorrowoxbasketitem
+      OxidEsales\Eshop\Application\Model\PaymentGateway: oxps/paymorrow/models/oxpspaymorrowoxpaymentgateway
+      OxidEsales\Eshop\Application\Model\UserPayment: oxps/paymorrow/models/oxpspaymorrowoxuserpayment
+      OxidEsales\Eshop\Application\Model\Basket: oxps/paymorrow/models/oxpspaymorrowoxbasket
+    events:
+      onActivate: 'OxpsPaymorrowModule::onActivate'
+      onDeactivate: 'OxpsPaymorrowModule::onDeactivate'
+    moduleSettings:
+      paymorrowSandboxMode:
+        group: oxpsPaymorrowConfiguration
+        type: bool
+        value: true
+      paymorrowMerchantId:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowMerchantIdTest:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowEndpointUrlProd:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: 'https://paymorrow.net/service/v2_1/'
+      paymorrowEndpointUrlTest:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: 'https://test.paymorrow.net/service/v2_1/'
+      paymorrowResourcePath:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: 'https://paymorrow.net/perthResource/jsmodule'
+      paymorrowResourcePathTest:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: 'https://test.paymorrow.net/perthResource/jsmodule'
+      paymorrowOperationMode:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: RISK_CHECK
+      paymorrowOperationModeTest:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: RISK_CHECK
+      paymorrowLoggingEnabled:
+        group: oxpsPaymorrowConfiguration
+        type: bool
+        value: false
+      paymorrowKeysJson:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowPrivateKey:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowPrivateKeyTest:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowPublicKey:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowPublicKeyTest:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowPaymorrowKey:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowPaymorrowKeyTest:
+        group: oxpsPaymorrowConfiguration
+        type: str
+        value: ''
+      paymorrowUpdateAddresses:
+        group: oxpsPaymorrowProfileUpdate
+        type: bool
+        value: true
+      paymorrowUpdatePhones:
+        group: oxpsPaymorrowProfileUpdate
+        type: bool
+        value: true
+    templateBlocks:
+      -
+        template: module_config.tpl
+        block: admin_module_config_form
+        file: views/admin/blocks/paymorrow_module_config.tpl
+      -
+        template: payment_main.tpl
+        block: admin_payment_main_form
+        file: views/admin/blocks/paymorrow_payment_main.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: select_payment
+        file: views/blocks/paymorrow_select_payment.tpl
+      -
+        template: email/html/order_cust.tpl
+        block: email_html_order_cust_orderemailend
+        file: views/email/html/order_cust_pm_html_bank_details.tpl
+      -
+        template: email/plain/order_cust.tpl
+        block: email_plain_order_cust_orderemailend
+        file: views/email/plain/order_cust_pm_plain_bank_details.tpl
+      -
+        template: email/html/order_cust.tpl
+        block: email_html_order_cust_paymentinfo
+        file: views/email/html/order_cust_pm_html_paymentinfo.tpl
+      -
+        template: email/plain/order_cust.tpl
+        block: email_plain_order_cust_paymentinfo
+        file: views/email/plain/order_cust_pm_plain_paymentinfo.tpl
+      -
+        template: layout/footer.tpl
+        block: footer_main
+        file: views/blocks/paymorrow_footer.tpl
+    templates:
+      paymorrow_paymnet_validation.tpl: oxps/paymorrow/views/admin/inc/paymorrow_paymnet_validation.tpl
+      paymorrow_errorlog.tpl: oxps/paymorrow/views/admin/paymorrow_errorlog.tpl
+      paymorrow_paymentmap.tpl: oxps/paymorrow/views/admin/paymorrow_paymentmap.tpl
+      oxpspaymorrowinit.tpl: oxps/paymorrow/views/widget/oxpspaymorrowinit.tpl
+      oxpspaymorrowsessionmonitor.tpl: oxps/paymorrow/views/widget/oxpspaymorrowsessionmonitor.tpl
+      paymorrow_payment_direct_debit.tpl: oxps/paymorrow/views/page/checkout/inc/paymorrow_payment_direct_debit.tpl
+      paymorrow_payment_invoice.tpl: oxps/paymorrow/views/page/checkout/inc/paymorrow_payment_invoice.tpl
   oegdproptin:
     id: oegdproptin
     path: oe/gdproptin
@@ -1332,21 +1332,21 @@ moduleChains:
     OxidEsales\Eshop\Application\Model\Basket:
       - TopConcepts\Klarna\Model\KlarnaBasket
       - fc/fcpayone/extend/application/models/fcPayOneBasket
-      - oxps/paymorrow/models/oxpspaymorrowoxbasket
       - OxidEsales\PayPalModule\Model\Basket
+      - oxps/paymorrow/models/oxpspaymorrowoxbasket
     OxidEsales\Eshop\Application\Model\User:
       - TopConcepts\Klarna\Model\KlarnaUser
       - fc/fcpayone/extend/application/models/fcPayOneUser
-      - oxps/paymorrow/models/oxpspaymorrowoxuser
       - OxidEsales\PayPalModule\Model\User
+      - oxps/paymorrow/models/oxpspaymorrowoxuser
     OxidEsales\Eshop\Application\Model\Article:
       - TopConcepts\Klarna\Model\KlarnaArticle
       - OxidEsales\PayPalModule\Model\Article
     OxidEsales\Eshop\Application\Model\Order:
       - TopConcepts\Klarna\Model\KlarnaOrder
       - fc/fcpayone/extend/application/models/fcPayOneOrder
-      - oxps/paymorrow/models/oxpspaymorrowoxorder
       - OxidEsales\PayPalModule\Model\Order
+      - oxps/paymorrow/models/oxpspaymorrowoxorder
       - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxorder
     OxidEsales\Eshop\Application\Model\Address:
       - TopConcepts\Klarna\Model\KlarnaAddress
@@ -1372,15 +1372,15 @@ moduleChains:
       - TopConcepts\Klarna\Controller\KlarnaViewConfig
       - OxidProfessionalServices\Usercentrics\Core\ViewConfig
       - fc/fcpayone/extend/core/fcPayOneViewConf
-      - oxps/paymorrow/core/oxpspaymorrowoxviewconfig
       - OxidEsales\PayPalModule\Core\ViewConfig
+      - oxps/paymorrow/core/oxpspaymorrowoxviewconfig
       - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxviewconfig
       - OxidEsales\WysiwygModule\Core\ViewConfig
     OxidEsales\Eshop\Application\Controller\OrderController:
       - TopConcepts\Klarna\Controller\KlarnaOrderController
       - fc/fcpayone/extend/application/controllers/fcPayOneOrderView
-      - oxps/paymorrow/controllers/oxpspaymorroworder
       - OxidEsales\PayPalModule\Controller\OrderController
+      - oxps/paymorrow/controllers/oxpspaymorroworder
       - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_order
     OxidEsales\Eshop\Application\Controller\UserController:
       - TopConcepts\Klarna\Controller\KlarnaUserController
@@ -1389,8 +1389,8 @@ moduleChains:
     OxidEsales\Eshop\Application\Controller\PaymentController:
       - TopConcepts\Klarna\Controller\KlarnaPaymentController
       - fc/fcpayone/extend/application/controllers/fcPayOnePaymentView
-      - oxps/paymorrow/controllers/oxpspaymorrowpayment
       - OxidEsales\PayPalModule\Controller\PaymentController
+      - oxps/paymorrow/controllers/oxpspaymorrowpayment
       - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_payment
     OxidEsales\Eshop\Application\Controller\BasketController:
       - TopConcepts\Klarna\Controller\KlarnaBasketController
@@ -1426,8 +1426,8 @@ moduleChains:
     OxidEsales\Eshop\Application\Model\PaymentGateway:
       - TopConcepts\Klarna\Model\PaymentGateway
       - fc/fcpayone/extend/application/models/fcPayOnePaymentgateway
-      - oxps/paymorrow/models/oxpspaymorrowoxpaymentgateway
       - OxidEsales\PayPalModule\Model\PaymentGateway
+      - oxps/paymorrow/models/oxpspaymorrowoxpaymentgateway
     OxidEsales\Eshop\Core\ShopControl:
       - TopConcepts\Klarna\Core\KlarnaShopControl
     OxidEsales\Eshop\Core\ViewHelper\JavaScriptRenderer:

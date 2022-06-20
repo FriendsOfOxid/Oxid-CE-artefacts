@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.33, created on 2022-06-14 11:01:55
+<?php /* Smarty version 2.6.33, created on 2022-06-21 01:05:15
          compiled from class_template.tpl */ ?>
 <?php if ($this->_tpl_vars['class']['isInterface']): ?>interface<?php elseif ($this->_tpl_vars['class']['isAbstract']): ?>abstract class<?php else: ?>class<?php endif; ?> <?php echo $this->_tpl_vars['class']['shortUnifiedClassName']; ?>
  extends \<?php echo $this->_tpl_vars['class']['editionClassName']; ?>
