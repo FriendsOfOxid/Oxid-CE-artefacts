@@ -1,0 +1,1287 @@
+modules:
+  tcklarna:
+    id: tcklarna
+    path: tc/tcklarna
+    version: 5.5.2
+    configured: false
+    title:
+      en: 'Klarna Checkout and Klarna Payments'
+    description:
+      de: 'Egal was Sie verkaufen, unsere Produkte sind dafür gemacht, Ihren Kunden das beste Erlebnis zu bereiten. Das gefällt nicht nur Ihnen, sondern auch uns! Die Klarna Plugins werden stets auf Herz und Nieren geprüft und können ganz einfach durch Sie oder Ihre technischen Ansprechpartner aktiviert werden. Das nennen wir smoooth. Hier können Sie sowohl Klarna Payments aktivieren und anschließend genau die Zahlarten auswählen, die Sie wünschen oder mit der Komplettlösung, dem Klarna Checkout, Ihre Customer Journey optimieren. Erfahren Sie hier mehr zu Klarna für OXID: <a href="https://www.klarna.com/de/verkaeufer/oxid/">https://www.klarna.com/de/verkaeufer/oxid/</a> Und so einfach ist die Integration: <a href="https://hello.klarna.com/rs/778-XGY-327/images/How_to_OXID.mp4" target="_blank">Zum Video</a>'
+      en: 'No matter what you sell, our products are made to give your customers the best purchase experience. This is not only smoooth for you - it is smoooth for us, too! Klarna plugins are always tested and can be activated by you or your technical contact with just a few clicks. That is smoooth. Here you can activate Klarna Payments and then select exactly the payment methods you want or optimize your customer journey with the complete Klarna Checkout solution. Find out more about Klarna for OXID: <a href="https://www.klarna.com/de/verkaeufer/oxid/" target="_blank">https://www.klarna.com/de/verkaeufer/oxid/</a> Integrating Klarna at OXID is easy as pie: <a href="https://hello.klarna.com/rs/778-XGY-327/images/How_to_OXID.mp4" target="_blank">to the video (click)</a>'
+    lang: ''
+    thumbnail: /out/admin/src/img/klarna_lockup_black.jpg
+    author: '<a href="https://www.cgrd.de/oxid-eshop" target="_blank">https://www.cgrd.de/oxid-eshop</a>'
+    url: 'https://www.klarna.com/de/verkaeufer/plattformen-und-partner/oxid/'
+    email: oxid@klarna.com
+    classExtensions:
+      OxidEsales\Eshop\Application\Model\Basket: TopConcepts\Klarna\Model\KlarnaBasket
+      OxidEsales\Eshop\Application\Model\User: TopConcepts\Klarna\Model\KlarnaUser
+      OxidEsales\Eshop\Application\Model\Article: TopConcepts\Klarna\Model\KlarnaArticle
+      OxidEsales\Eshop\Application\Model\Order: TopConcepts\Klarna\Model\KlarnaOrder
+      OxidEsales\Eshop\Application\Model\Address: TopConcepts\Klarna\Model\KlarnaAddress
+      OxidEsales\Eshop\Application\Model\Payment: TopConcepts\Klarna\Model\KlarnaPayment
+      OxidEsales\Eshop\Application\Model\CountryList: TopConcepts\Klarna\Model\KlarnaCountryList
+      OxidEsales\Eshop\Application\Model\OrderArticle: TopConcepts\Klarna\Model\KlarnaOrderArticle
+      OxidEsales\Eshop\Application\Model\UserPayment: TopConcepts\Klarna\Model\KlarnaUserPayment
+      OxidEsales\Eshop\Application\Controller\ThankYouController: TopConcepts\Klarna\Controller\KlarnaThankYouController
+      OxidEsales\Eshop\Core\ViewConfig: TopConcepts\Klarna\Controller\KlarnaViewConfig
+      OxidEsales\Eshop\Application\Controller\OrderController: TopConcepts\Klarna\Controller\KlarnaOrderController
+      OxidEsales\Eshop\Application\Controller\UserController: TopConcepts\Klarna\Controller\KlarnaUserController
+      OxidEsales\Eshop\Application\Controller\PaymentController: TopConcepts\Klarna\Controller\KlarnaPaymentController
+      OxidEsales\Eshop\Application\Controller\BasketController: TopConcepts\Klarna\Controller\KlarnaBasketController
+      OxidEsales\Eshop\Application\Controller\Admin\OrderAddress: TopConcepts\Klarna\Controller\Admin\KlarnaOrderAddress
+      OxidEsales\Eshop\Application\Controller\Admin\OrderList: TopConcepts\Klarna\Controller\Admin\KlarnaOrderList
+      OxidEsales\Eshop\Application\Controller\Admin\OrderArticle: TopConcepts\Klarna\Controller\Admin\KlarnaOrderArticle
+      OxidEsales\Eshop\Application\Controller\Admin\OrderMain: TopConcepts\Klarna\Controller\Admin\KlarnaOrderMain
+      OxidEsales\Eshop\Application\Controller\Admin\OrderOverview: TopConcepts\Klarna\Controller\Admin\KlarnaOrderOverview
+      OxidEsales\Eshop\Application\Controller\Admin\PaymentMain: TopConcepts\Klarna\Controller\Admin\KlarnaPaymentMain
+      OxidEsales\Eshop\Application\Component\BasketComponent: TopConcepts\Klarna\Component\KlarnaBasketComponent
+      OxidEsales\Eshop\Application\Component\UserComponent: TopConcepts\Klarna\Component\KlarnaUserComponent
+      OxidEsales\Eshop\Application\Component\Widget\ServiceMenu: TopConcepts\Klarna\Component\Widgets\KlarnaServiceMenu
+      OxidEsales\Eshop\Core\Config: TopConcepts\Klarna\Core\Config
+      OxidEsales\Eshop\Application\Model\PaymentGateway: TopConcepts\Klarna\Model\PaymentGateway
+      OxidEsales\Eshop\Core\ShopControl: TopConcepts\Klarna\Core\KlarnaShopControl
+    controllers:
+      KlarnaStart: TopConcepts\Klarna\Controller\Admin\KlarnaStart
+      KlarnaGeneral: TopConcepts\Klarna\Controller\Admin\KlarnaGeneral
+      KlarnaConfiguration: TopConcepts\Klarna\Controller\Admin\KlarnaConfiguration
+      KlarnaDesign: TopConcepts\Klarna\Controller\Admin\KlarnaDesign
+      KlarnaExternalPayments: TopConcepts\Klarna\Controller\Admin\KlarnaExternalPayments
+      KlarnaEmdAdmin: TopConcepts\Klarna\Controller\Admin\KlarnaEmdAdmin
+      KlarnaOrders: TopConcepts\Klarna\Controller\Admin\KlarnaOrders
+      KlarnaMessaging: TopConcepts\Klarna\Controller\Admin\KlarnaMessaging
+      KlarnaShipping: TopConcepts\Klarna\Controller\Admin\KlarnaShipping
+      KlarnaExpress: TopConcepts\Klarna\Controller\KlarnaExpressController
+      KlarnaAjax: TopConcepts\Klarna\Controller\KlarnaAjaxController
+      KlarnaEpmDispatcher: TopConcepts\Klarna\Controller\KlarnaEpmDispatcher
+      KlarnaAcknowledge: TopConcepts\Klarna\Controller\KlarnaAcknowledgeController
+      KlarnaValidate: TopConcepts\Klarna\Controller\KlarnaValidationController
+    events:
+      onActivate: '\TopConcepts\Klarna\Core\KlarnaInstaller::onActivate'
+      onDeactivate: '\TopConcepts\Klarna\Core\KlarnaInstaller::onDeactivate'
+    templateBlocks:
+      -
+        template: widget/minibasket/minibasket.tpl
+        block: widget_minibasket
+        file: views/blocks/minibasket_widget_minibasket.tpl
+      -
+        template: page/shop/start.tpl
+        block: start_manufacturer_slider
+        file: views/blocks/start_widget_manufacturer.tpl
+      -
+        template: layout/header.tpl
+        block: header_main
+        file: views/blocks/header_main.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: details_productmain_variantselections
+        file: views/blocks/productmain_variantselection.tpl
+      -
+        template: layout/footer.tpl
+        block: footer_main
+        file: views/blocks/footer_footer_main.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: select_payment
+        file: views/blocks/payment_select_payment.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: checkout_basket_next_step_top
+        file: views/blocks/basket_checkout_basket_next_step_top.tpl
+      -
+        template: page/checkout/inc/basketcontents.tpl
+        block: checkout_basketcontents_summary
+        file: views/blocks/checkout_basketcontents_summary.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: change_payment
+        file: views/blocks/payment_change_payment.tpl
+      -
+        template: page/checkout/order.tpl
+        block: order_basket
+        file: views/blocks/order_order_basket.tpl
+      -
+        template: page/checkout/order.tpl
+        block: shippingAndPayment
+        file: views/blocks/order_shippingAndPayment.tpl
+      -
+        template: page/checkout/order.tpl
+        block: checkout_order_next_step_bottom
+        file: views/blocks/order_checkout_order_next_step_bottom.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: details_productmain_tobasket
+        file: views/blocks/productmain_details_productmain_tobasket.tpl
+      -
+        template: page/checkout/thankyou.tpl
+        block: checkout_thankyou_info
+        file: views/blocks/thankyou_checkout_thankyou_info.tpl
+      -
+        template: page/checkout/inc/steps.tpl
+        block: checkout_steps_main
+        file: views/blocks/steps_checkout_steps_main.tpl
+      -
+        template: form/fieldset/user_billing.tpl
+        block: form_user_billing_country
+        file: views/blocks/user_billing_form_user_billing_country.tpl
+      -
+        template: layout/footer.tpl
+        block: footer_main
+        file: views/blocks/tcklarna_law_notice.tpl
+      -
+        template: order_main.tpl
+        block: admin_order_main_form
+        file: views/blocks/admin/order_main_admin_order_main_form.tpl
+      -
+        template: email/html/order_cust.tpl
+        block: email_html_order_cust_paymentinfo_top
+        file: views/blocks/order_cust_email_html_order_cust_paymentinfo_top.tpl
+      -
+        template: form/fieldset/user_shipping.tpl
+        block: form_user_shipping_country
+        file: views/blocks/user_shipping_form_user_shipping_country.tpl
+      -
+        template: order_overview.tpl
+        block: admin_order_overview_billingaddress
+        file: views/blocks/admin/order_overview_admin_order_overview_billingaddress.tpl
+      -
+        template: order_article.tpl
+        block: admin_order_article_header
+        file: views/blocks/admin/order_article_admin_order_article_header.tpl
+      -
+        template: order_list.tpl
+        block: admin_order_list_filter
+        file: views/blocks/admin/order_list_admin_order_list_filter.tpl
+      -
+        template: payment_main.tpl
+        block: admin_payment_main_form
+        file: views/blocks/admin/payment_main_admin_payment_main_form.tpl
+    templates:
+      tcklarna_checkout.tpl: tc/tcklarna/views/tpl/checkout/tcklarna_checkout.tpl
+      tcklarna_amazon_login.tpl: tc/tcklarna/views/tpl/checkout/tcklarna_amazon_login.tpl
+      tcklarna_checkout_voucher_data.tpl: tc/tcklarna/views/tpl/checkout/inc/tcklarna_checkout_voucher_data.tpl
+      tcklarna_checkout_voucher_box.tpl: tc/tcklarna/views/tpl/checkout/inc/tcklarna_checkout_voucher_box.tpl
+      tcklarna_checkout_voucher_errors.tpl: tc/tcklarna/views/tpl/checkout/inc/tcklarna_checkout_voucher_errors.tpl
+      tcklarna_json.tpl: tc/tcklarna/views/tpl/checkout/inc/tcklarna_json.tpl
+      tcklarna_country_select_popup.tpl: tc/tcklarna/views/tpl/checkout/inc/tcklarna_country_select_popup.tpl
+      tcklarna_checkout_login_box.tpl: tc/tcklarna/views/tpl/checkout/inc/tcklarna_checkout_login_box.tpl
+      tcklarna_checkout_address_box.tpl: tc/tcklarna/views/tpl/checkout/inc/tcklarna_checkout_address_box.tpl
+      tcklarna_general.tpl: tc/tcklarna/views/admin/tpl/tcklarna_general.tpl
+      tcklarna_design.tpl: tc/tcklarna/views/admin/tpl/tcklarna_design.tpl
+      tcklarna_kco_config.tpl: tc/tcklarna/views/admin/tpl/tcklarna_kco_config.tpl
+      tcklarna_kp_config.tpl: tc/tcklarna/views/admin/tpl/tcklarna_kp_config.tpl
+      tcklarna_start.tpl: tc/tcklarna/views/admin/tpl/tcklarna_start.tpl
+      tcklarna_external_payments.tpl: tc/tcklarna/views/admin/tpl/tcklarna_external_payments.tpl
+      tcklarna_emd_admin.tpl: tc/tcklarna/views/admin/tpl/tcklarna_emd_admin.tpl
+      tcklarna_orders.tpl: tc/tcklarna/views/admin/tpl/tcklarna_orders.tpl
+      tcklarna_messaging.tpl: tc/tcklarna/views/admin/tpl/tcklarna_messaging.tpl
+      tcklarna_shipping.tpl: tc/tcklarna/views/admin/tpl/tcklarna_shipping.tpl
+      tcklarna_country_creds.tpl: tc/tcklarna/views/admin/tpl/tcklarna_country_creds.tpl
+      tcklarna_header.tpl: tc/tcklarna/views/admin/tpl/tcklarna_header.tpl
+      tcklarna_lang_spec_conf.tpl: tc/tcklarna/views/admin/tpl/tcklarna_lang_spec_conf.tpl
+  oxps_usercentrics:
+    id: oxps_usercentrics
+    path: oxps/usercentrics
+    version: 1.2.0
+    configured: false
+    title:
+      en: 'OXID Cookie Management powered by usercentrics'
+    description:
+      de: "Die Usercentrics Consent Management Platform (CMP) ermöglicht Ihnen, Ihre Marketing- und Datenstrategie\n                 mit rechtlichen Anforderungen in Einklang zu bringen.</p>\n                 <h2>Registrieren Sie sich deshalb jetzt bei Usercentrics</h2>  \n                 <form target=\"_blank\" method=\"GET\" action=\"https://usercentrics.com/de/preise/?partnerid=16967#business-paket\">\n                     <input type=\"hidden\" name=\"partnerid\" value=\"16967\">\n                     <input style=\"background: #0A2; color: #fff; font-weight: bold;\" type=\"submit\" value=\"Jetzt registrieren\">\n                     <p>\n                         Sollte ein anderer Mitarbeiter in Ihrem Unternehmen die Registrierung durchführen, bitte dabei zwingend die OXID Partner-ID 16967 angeben, um die Integration vollständig nutzen zu können. Zu diesem Zweck können Sie diesen Link weitergeben: https://usercentrics.com/de/preise/?partnerid=16967#business-paket\n                     </p>\n                 </form>\n                 "
+      en: "The Usercentrics Consent Management Platform (CMP) enables you to harmonize your marketing and data \n                 strategy with legal requirements.</p>\n                 <h2>Register now for Usercentrics</h2>  \n                 <form target=\"_blank\" method=\"GET\" action=\"https://usercentrics.com/pricing/?partnerid=16967#business-package\">               \n                     <input type=\"hidden\" name=\"partnerid\" value=\"16967\">\n                     <input style=\"background: #0A2; color: #fff; font-weight: bold;\" type=\"submit\" value=\"Register Now\">\n                     <p>\n                         If another employee in your company registers, please make sure to enter the OXID partner ID 16967 in order to be able to fully use the integration. For that reason you can forward this link to them: https://usercentrics.com/pricing/?partnerid=16967#business-package\n                     </p>\n                 </form>\n                 "
+    lang: ''
+    thumbnail: ''
+    author: 'OXID Professional Services'
+    url: ''
+    email: ''
+    classExtensions:
+      OxidEsales\Eshop\Core\ViewHelper\JavaScriptRenderer: OxidProfessionalServices\Usercentrics\Core\ScriptRenderer
+      OxidEsales\Eshop\Core\ViewConfig: OxidProfessionalServices\Usercentrics\Core\ViewConfig
+    moduleSettings:
+      usercentricsId:
+        group: usercentrics_main
+        type: str
+        value: ''
+      smartDataProtectorActive:
+        group: usercentrics_advanced
+        type: bool
+        value: true
+      smartDataProtectorDeactivateBlocking:
+        group: usercentrics_advanced
+        type: str
+        value: ''
+      usercentricsMode:
+        group: usercentrics_advanced
+        type: select
+        value: CmpV2
+        constraints:
+          - CmpV1
+          - CmpV2
+          - CmpV2Legacy
+          - CmpV2Tcf
+          - CmpV2TcfLegacy
+          - Custom
+      developmentAutomaticConsent:
+        type: bool
+        value: false
+    templateBlocks:
+      -
+        template: layout/base.tpl
+        block: base_js
+        file: src/views/blocks/base_js.tpl
+      -
+        template: layout/base.tpl
+        block: head_meta_description
+        file: src/views/blocks/head_meta_description.tpl
+  fcpayone:
+    id: fcpayone
+    path: fc/fcpayone
+    version: 1.6.2
+    configured: false
+    title:
+      en: 'PAYONE Payment f&uuml;r OXID eShop'
+    description:
+      en: "Sie suchen nach der optimalen Payment-L&ouml;sung f&uuml;r Ihren Online-Shop?<br><br>\n                        PAYONE bietet Unternehmensl&ouml;sungen zur automatisierten und ganzheitlichen Abwicklung aller Zahlungsprozesse im E-Commerce. \n                        Der Payment Service Provider ist ein Unternehmen der Sparkassen-Finanzgruppe und von der Bundesanstalt f&uuml;r Finanzdienstleistungsaufsicht als Zahlungsinstitut zugelassen. \n                        Das Leistungsspektrum umfasst die Akzeptanz und Abwicklung nationaler und internationaler Zahlungsarten sowie alle Zahlungsdienstleistungen. \n                        Standardisierte Schnittstellen und Extensions erlauben eine einfache Integration in bestehende E-Commerce und IT-Systeme bei h&ouml;chsten Sicherheitsstandards.<br><br>\n                        Hier finden Sie weitere Informationen zum PAYONE Payment-Modul f&uuml;r OXID eShop: \n                        <a href=\"https://www.payone.de/plattform-integration/extensions/oxid/\" style=\"color:darkblue;text-decoration: underline;\" title=\"PAYONE Homepage\" target=\"_blank\">\n                            https://www.payone.de\n                        </a>"
+    lang: ''
+    thumbnail: picture.gif
+    author: 'FATCHIP GmbH'
+    url: 'https://wiki.fatchip.de/public/faqpayone'
+    email: kontakt@fatchip.de
+    classesWithoutNamespace:
+      fcpayone_adminview: fc/fcpayone/application/controllers/admin/fcpayone_adminview.php
+      fcpayone_admindetails: fc/fcpayone/application/controllers/admin/fcpayone_admindetails.php
+      fcpayone_adminlist: fc/fcpayone/application/controllers/admin/fcpayone_adminlist.php
+      fcpayone_main_ajax: fc/fcpayone/application/controllers/admin/fcPayOne_Main_Ajax.php
+      fcpayone_admin: fc/fcpayone/application/controllers/admin/fcpayone_admin.php
+      fcpayone_apilog: fc/fcpayone/application/controllers/admin/fcpayone_apilog.php
+      fcpayone_apilog_list: fc/fcpayone/application/controllers/admin/fcpayone_apilog_list.php
+      fcpayone_apilog_main: fc/fcpayone/application/controllers/admin/fcpayone_apilog_main.php
+      fcpayone_boni: fc/fcpayone/application/controllers/admin/fcpayone_boni.php
+      fcpayone_boni_list: fc/fcpayone/application/controllers/admin/fcpayone_boni_list.php
+      fcpayone_boni_main: fc/fcpayone/application/controllers/admin/fcpayone_boni_main.php
+      fcpayone_list: fc/fcpayone/application/controllers/admin/fcpayone_list.php
+      fcpayone_log: fc/fcpayone/application/controllers/admin/fcpayone_log.php
+      fcpayone_log_list: fc/fcpayone/application/controllers/admin/fcpayone_log_list.php
+      fcpayone_main: fc/fcpayone/application/controllers/admin/fcpayone_main.php
+      fcpayone_order: fc/fcpayone/application/controllers/admin/fcpayone_order.php
+      fcpayone_protocol: fc/fcpayone/application/controllers/admin/fcpayone_protocol.php
+      fcpayone_status_forwarding: fc/fcpayone/application/controllers/admin/fcpayone_status_forwarding.php
+      fcpayone_status_mapping: fc/fcpayone/application/controllers/admin/fcpayone_status_mapping.php
+      fcpayone_error_mapping: fc/fcpayone/application/controllers/admin/fcpayone_error_mapping.php
+      fcpayoneiframe: fc/fcpayone/application/controllers/fcpayoneiframe.php
+      fcpouserflag: fc/fcpayone/application/models/fcpouserflag.php
+      fcporequestlog: fc/fcpayone/application/models/fcporequestlog.php
+      fcpotransactionstatus: fc/fcpayone/application/models/fcpotransactionstatus.php
+      fcpomapping: fc/fcpayone/application/models/fcpomapping.php
+      fcpoerrormapping: fc/fcpayone/application/models/fcpoerrormapping.php
+      fcpoforwarding: fc/fcpayone/application/models/fcpoforwarding.php
+      fcpoconfigexport: fc/fcpayone/application/models/fcpoconfigexport.php
+      fcpoklarna: fc/fcpayone/application/models/fcpoklarna.php
+      fcpopaypal: fc/fcpayone/application/models/fcpopaypal.php
+      fcpayone_ajax: fc/fcpayone/application/models/fcpayone_ajax.php
+      fcporatepay: fc/fcpayone/application/models/fcporatepay.php
+      fcpohelper: fc/fcpayone/lib/fcpohelper.php
+      fcporequest: fc/fcpayone/lib/fcporequest.php
+      fcpoparamsparser: fc/fcpayone/lib/fcpoparamsparser.php
+      fcpayone_events: fc/fcpayone/core/fcpayone_events.php
+    classExtensions:
+      OxidEsales\Eshop\Application\Controller\Admin\PaymentMain: fc/fcpayone/extend/application/controllers/admin/fcPayOnePaymentMain
+      OxidEsales\Eshop\Application\Controller\BasketController: fc/fcpayone/extend/application/controllers/fcPayOneBasketView
+      OxidEsales\Eshop\Application\Controller\UserController: fc/fcpayone/extend/application/controllers/fcPayOneUserView
+      OxidEsales\Eshop\Application\Controller\OrderController: fc/fcpayone/extend/application/controllers/fcPayOneOrderView
+      OxidEsales\Eshop\Application\Controller\PaymentController: fc/fcpayone/extend/application/controllers/fcPayOnePaymentView
+      OxidEsales\Eshop\Application\Controller\ThankYouController: fc/fcpayone/extend/application/controllers/fcPayOneThankyouView
+      OxidEsales\Eshop\Application\Model\Basket: fc/fcpayone/extend/application/models/fcPayOneBasket
+      OxidEsales\Eshop\Application\Model\BasketItem: fc/fcpayone/extend/application/models/fcPayOneBasketitem
+      OxidEsales\Eshop\Application\Model\Order: fc/fcpayone/extend/application/models/fcPayOneOrder
+      OxidEsales\Eshop\Application\Model\OrderArticle: fc/fcpayone/extend/application/models/fcPayOneOrderarticle
+      OxidEsales\Eshop\Application\Model\Payment: fc/fcpayone/extend/application/models/fcPayOnePayment
+      OxidEsales\Eshop\Application\Model\PaymentGateway: fc/fcpayone/extend/application/models/fcPayOnePaymentgateway
+      OxidEsales\Eshop\Application\Model\User: fc/fcpayone/extend/application/models/fcPayOneUser
+      OxidEsales\Eshop\Application\Model\Address: fc/fcpayone/extend/application/models/fcPayOneAddress
+      OxidEsales\Eshop\Core\ViewConfig: fc/fcpayone/extend/core/fcPayOneViewConf
+    events:
+      onActivate: 'fcpayone_events::onActivate'
+      onDeactivate: 'fcpayone_events::onDeactivate'
+    templateBlocks:
+      -
+        template: layout/base.tpl
+        block: base_js
+        file: fcpo_base_js_extend
+      -
+        template: layout/base.tpl
+        block: base_style
+        file: fcpo_base_css_extend
+      -
+        template: page/checkout/basket.tpl
+        block: checkout_basket_main
+        file: fcpo_basket_override
+      -
+        template: widget/minibasket/minibasket.tpl
+        block: widget_minibasket_total
+        file: fcpo_minibasket_total_override
+      -
+        template: page/checkout/order.tpl
+        block: checkout_order_address
+        file: fcpo_order_override
+      -
+        template: page/checkout/user.tpl
+        block: checkout_user_main
+        file: fcpo_user_override
+      -
+        template: _formparams.tpl
+        block: admin_formparams
+        file: fcpo_admin_formparams
+      -
+        template: page/checkout/payment.tpl
+        block: change_payment
+        file: fcpo_payment_override
+      -
+        template: page/checkout/payment.tpl
+        block: select_payment
+        file: fcpo_payment_select_override
+      -
+        template: page/checkout/order.tpl
+        block: order_basket
+        file: fcpo_order_basket_override
+      -
+        template: page/checkout/order.tpl
+        block: checkout_order_errors
+        file: fcpo_order_checkout_order_errors
+      -
+        template: page/checkout/thankyou.tpl
+        block: checkout_thankyou_proceed
+        file: fcpo_thankyou_checkout_thankyou
+      -
+        template: email/html/order_cust.tpl
+        block: email_html_order_cust_paymentinfo
+        file: fcpo_email_html_order_cust_paymentinfo
+      -
+        template: email/plain/order_cust.tpl
+        block: email_plain_order_cust_paymentinfo
+        file: fcpo_email_plain_order_cust_paymentinfo
+      -
+        template: order_list.tpl
+        block: admin_order_list_colgroup
+        file: fcpo_admin_order_list_colgroup
+      -
+        template: order_list.tpl
+        block: admin_order_list_filter
+        file: fcpo_admin_order_list_filter
+      -
+        template: order_list.tpl
+        block: admin_order_list_sorting
+        file: fcpo_admin_order_list_sorting
+      -
+        template: order_list.tpl
+        block: admin_order_list_item
+        file: fcpo_admin_order_list_item
+      -
+        template: payment_list.tpl
+        block: admin_payment_list_filter
+        file: fcpo_admin_payment_list_filter
+      -
+        template: payment_main.tpl
+        block: admin_payment_main_form
+        file: fcpo_admin_payment_main_form
+      -
+        template: page/checkout/basket.tpl
+        block: basket_btn_next_top
+        file: fcpo_basket_btn_next
+      -
+        template: page/checkout/basket.tpl
+        block: basket_btn_next_bottom
+        file: fcpo_basket_btn_next_bottom
+      -
+        template: page/checkout/payment.tpl
+        block: checkout_payment_errors
+        file: fcpo_payment_errors
+      -
+        template: page/checkout/basket.tpl
+        block: checkout_basket_main
+        file: fcpo_basket_errors
+    templates:
+      fcpayoneiframe.tpl: fc/fcpayone/application/views/frontend/tpl/fcpayoneiframe.tpl
+      fcpayone_popup_main.tpl: fc/fcpayone/application/views/admin/tpl/popups/fcpayone_popup_main.tpl
+      fcpayone.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone.tpl
+      fcpayone_apilog.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_apilog.tpl
+      fcpayone_apilog_list.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_apilog_list.tpl
+      fcpayone_apilog_main.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_apilog_main.tpl
+      fcpayone_boni.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_boni.tpl
+      fcpayone_boni_list.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_boni_list.tpl
+      fcpayone_boni_main.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_boni_main.tpl
+      fcpayone_cc_preview.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_cc_preview.tpl
+      fcpayone_list.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_list.tpl
+      fcpayone_log.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_log.tpl
+      fcpayone_log_list.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_log_list.tpl
+      fcpayone_main.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_main.tpl
+      fcpayone_order.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_order.tpl
+      fcpayone_protocol.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_protocol.tpl
+      fcpayone_status_forwarding.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_status_forwarding.tpl
+      fcpayone_status_mapping.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_status_mapping.tpl
+      fcpayone_error_mapping.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_error_mapping.tpl
+  oepaypal:
+    id: oepaypal
+    path: oe/oepaypal
+    version: 6.4.0
+    configured: false
+    title:
+      en: PayPal
+    description:
+      de: 'Modul für die Zahlung mit PayPal.'
+      en: 'Module for PayPal payment.'
+    lang: ''
+    thumbnail: logo.jpg
+    author: 'OXID eSales AG'
+    url: 'https://www.oxid-esales.com'
+    email: info@oxid-esales.com
+    classExtensions:
+      OxidEsales\Eshop\Core\ViewConfig: OxidEsales\PayPalModule\Core\ViewConfig
+      OxidEsales\Eshop\Application\Component\BasketComponent: OxidEsales\PayPalModule\Component\BasketComponent
+      OxidEsales\Eshop\Application\Component\Widget\ArticleDetails: OxidEsales\PayPalModule\Component\Widget\ArticleDetails
+      OxidEsales\Eshop\Application\Controller\OrderController: OxidEsales\PayPalModule\Controller\OrderController
+      OxidEsales\Eshop\Application\Controller\PaymentController: OxidEsales\PayPalModule\Controller\PaymentController
+      OxidEsales\Eshop\Application\Controller\WrappingController: OxidEsales\PayPalModule\Controller\WrappingController
+      OxidEsales\Eshop\Application\Controller\Admin\OrderList: OxidEsales\PayPalModule\Controller\Admin\OrderList
+      OxidEsales\Eshop\Application\Controller\Admin\DeliverySetMain: OxidEsales\PayPalModule\Controller\Admin\DeliverySetMain
+      OxidEsales\Eshop\Application\Model\Address: OxidEsales\PayPalModule\Model\Address
+      OxidEsales\Eshop\Application\Model\User: OxidEsales\PayPalModule\Model\User
+      OxidEsales\Eshop\Application\Model\Order: OxidEsales\PayPalModule\Model\Order
+      OxidEsales\Eshop\Application\Model\Basket: OxidEsales\PayPalModule\Model\Basket
+      OxidEsales\Eshop\Application\Model\Article: OxidEsales\PayPalModule\Model\Article
+      OxidEsales\Eshop\Application\Model\PaymentGateway: OxidEsales\PayPalModule\Model\PaymentGateway
+      OxidEsales\Eshop\Application\Model\PaymentList: OxidEsales\PayPalModule\Model\PaymentList
+    controllers:
+      oepaypalexpresscheckoutdispatcher: OxidEsales\PayPalModule\Controller\ExpressCheckoutDispatcher
+      oepaypalstandarddispatcher: OxidEsales\PayPalModule\Controller\StandardDispatcher
+      oepaypalipnhandler: OxidEsales\PayPalModule\Controller\IPNHandler
+      oepaypalorder_paypal: OxidEsales\PayPalModule\Controller\Admin\OrderController
+    events:
+      onActivate: '\OxidEsales\PayPalModule\Core\Events::onActivate'
+      onDeactivate: '\OxidEsales\PayPalModule\Core\Events::onDeactivate'
+    moduleSettings:
+      oePayPalClientId:
+        group: oepaypal_banners
+        type: str
+        value: ''
+      oePayPalBannersHideAll:
+        group: oepaypal_banners
+        type: bool
+        value: false
+      oePayPalBannersStartPage:
+        group: oepaypal_banners
+        type: bool
+        value: true
+      oePayPalBannersStartPageSelector:
+        group: oepaypal_banners
+        type: str
+        value: '#wrapper .row'
+      oePayPalBannersCategoryPage:
+        group: oepaypal_banners
+        type: bool
+        value: true
+      oePayPalBannersCategoryPageSelector:
+        group: oepaypal_banners
+        type: str
+        value: .page-header
+      oePayPalBannersSearchResultsPage:
+        group: oepaypal_banners
+        type: bool
+        value: true
+      oePayPalBannersSearchResultsPageSelector:
+        group: oepaypal_banners
+        type: str
+        value: '#content .page-header .clearfix'
+      oePayPalBannersProductDetailsPage:
+        group: oepaypal_banners
+        type: bool
+        value: true
+      oePayPalBannersProductDetailsPageSelector:
+        group: oepaypal_banners
+        type: str
+        value: .detailsParams
+      oePayPalBannersCheckoutPage:
+        group: oepaypal_banners
+        type: bool
+        value: true
+      oePayPalBannersCartPageSelector:
+        group: oepaypal_banners
+        type: str
+        value: .cart-buttons
+      oePayPalBannersPaymentPageSelector:
+        group: oepaypal_banners
+        type: str
+        value: '.checkoutSteps ~ .spacer'
+      oePayPalBannersColorScheme:
+        group: oepaypal_banners
+        type: select
+        value: blue
+        constraints:
+          - blue
+          - black
+          - white
+          - white-no-border
+      blOEPayPalStandardCheckout:
+        group: oepaypal_checkout
+        type: bool
+        value: true
+      blOEPayPalExpressCheckout:
+        group: oepaypal_checkout
+        type: bool
+        value: true
+      blOEPayPalECheckoutInMiniBasket:
+        group: oepaypal_checkout
+        type: bool
+        value: true
+      blOEPayPalECheckoutInDetails:
+        group: oepaypal_checkout
+        type: bool
+        value: true
+      blOEPayPalFinalizeOrderOnPayPal:
+        group: oepaypal_checkout
+        type: bool
+        value: true
+      sOEPayPalBrandName:
+        group: oepaypal_display
+        type: str
+        value: 'PayPal Testshop'
+      sOEPayPalBorderColor:
+        group: oepaypal_display
+        type: str
+        value: 2b8da4
+      sOEPayPalLogoImageOption:
+        group: oepaypal_display
+        type: select
+        value: noLogo
+        constraints:
+          - noLogo
+          - shopLogo
+          - customLogo
+      sOEPayPalCustomShopLogoImage:
+        group: oepaypal_display
+        type: str
+        value: ''
+      blOEPayPalSendToPayPal:
+        group: oepaypal_payment
+        type: bool
+        value: true
+      blOEPayPalDefaultUserChoice:
+        group: oepaypal_payment
+        type: bool
+        value: true
+      sOEPayPalTransactionMode:
+        group: oepaypal_transaction
+        type: select
+        value: Sale
+        constraints:
+          - Sale
+          - Authorization
+          - Automatic
+      sOEPayPalEmptyStockLevel:
+        group: oepaypal_transaction
+        type: str
+        value: '0'
+      sOEPayPalUserEmail:
+        group: oepaypal_api
+        type: str
+        value: ''
+      sOEPayPalUsername:
+        group: oepaypal_api
+        type: str
+        value: ''
+      sOEPayPalPassword:
+        group: oepaypal_api
+        type: password
+        value: ''
+      sOEPayPalSignature:
+        group: oepaypal_api
+        type: str
+        value: ''
+      blPayPalLoggerEnabled:
+        group: oepaypal_development
+        type: bool
+        value: false
+      blOEPayPalSandboxMode:
+        group: oepaypal_development
+        type: bool
+        value: false
+      sOEPayPalSandboxUserEmail:
+        group: oepaypal_development
+        type: str
+        value: ''
+      sOEPayPalSandboxUsername:
+        group: oepaypal_development
+        type: str
+        value: ''
+      sOEPayPalSandboxPassword:
+        group: oepaypal_development
+        type: password
+        value: ''
+      sOEPayPalSandboxSignature:
+        group: oepaypal_development
+        type: str
+        value: ''
+    templateBlocks:
+      -
+        template: deliveryset_main.tpl
+        block: admin_deliveryset_main_form
+        file: /views/blocks/deliveryset_main.tpl
+      -
+        template: widget/sidebar/partners.tpl
+        block: partner_logos
+        file: /views/blocks/widget/sidebar/oepaypalpartnerbox.tpl
+      -
+        template: widget/minibasket/minibasket.tpl
+        block: widget_minibasket_total
+        file: /views/blocks/widget/minibasket/oepaypalexpresscheckoutminibasket.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: basket_btn_next_top
+        file: /views/blocks/page/checkout/oepaypalexpresscheckout.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: basket_btn_next_bottom
+        file: /views/blocks/page/checkout/oepaypalexpresscheckout.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: select_payment
+        file: /views/blocks/page/checkout/oepaypalpaymentselector.tpl
+      -
+        template: order_list.tpl
+        block: admin_order_list_filter
+        file: /views/blocks/oepaypalorder_list_filter_actions.tpl
+      -
+        template: order_list.tpl
+        block: admin_order_list_sorting
+        file: /views/blocks/oepaypalorder_list_sorting_actions.tpl
+      -
+        template: order_list.tpl
+        block: admin_order_list_item
+        file: /views/blocks/oepaypalorder_list_items_actions.tpl
+      -
+        template: order_list.tpl
+        block: admin_order_list_colgroup
+        file: /views/blocks/oepaypalorder_list_colgroup_actions.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: details_productmain_tobasket
+        file: /views/blocks/page/details/oepaypalexpresscheckoutdetailspage.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: details_productmain_morepics
+        file: /views/blocks/page/details/oepaypalexpresscheckoutdetailspagepopup.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: mb_basket_btn_next_top
+        file: /views/blocks/mobile/oepaypalexpresscheckout.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: mb_basket_btn_next_bottom
+        file: /views/blocks/mobile/oepaypalexpresscheckout.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: mb_select_payment_dropdown
+        file: /views/blocks/mobile/oepaypalpaymentdropdown.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: mb_select_payment
+        file: /views/blocks/mobile/oepaypalpaymentselector.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: mb_details_productmain_tobasket
+        file: /views/blocks/mobile/oepaypalexpresscheckoutdetailspage.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: mb_details_productmain_morepics
+        file: /views/blocks/mobile/oepaypalexpresscheckoutdetailspagepopup.tpl
+      -
+        template: page/checkout/user.tpl
+        block: checkout_user_main
+        file: /views/blocks/page/checkout/oepaypalexpresscheckout.tpl
+      -
+        template: page/shop/start.tpl
+        block: start_welcome_text
+        file: /views/blocks/page/shop/start.tpl
+      -
+        template: page/search/search.tpl
+        block: search_header
+        file: /views/blocks/page/search/search.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: checkout_basket_next_step_top
+        file: /views/blocks/page/checkout/basket_installment_banner_after.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: checkout_basket_emptyshippingcart
+        file: /views/blocks/page/checkout/basket_installment_banner_before.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: checkout_payment_main
+        file: /views/blocks/page/checkout/basket_installment_banner_before.tpl
+      -
+        template: page/list/list.tpl
+        block: page_list_listhead
+        file: /views/blocks/page/list/list.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: details_productmain_price_value
+        file: /views/blocks/page/details/inc/productmain.tpl
+    templates:
+      order_paypal.tpl: oe/oepaypal/views/admin/tpl/order_paypal.tpl
+      ipnhandler.tpl: oe/oepaypal/views/tpl/ipnhandler.tpl
+      installment_banners.tpl: oe/oepaypal/views/tpl/installment_banners.tpl
+  oegdproptin:
+    id: oegdproptin
+    path: oe/gdproptin
+    version: 2.3.3
+    configured: false
+    title:
+      de: 'GDPR Opt-in'
+      en: 'GDPR Opt-in'
+    description:
+      de: 'Das Modul stellt Opt-in-Funktionalit&auml;t f&uuml;r die Datenschutz-Grundverordnung (DSGVO) bereit'
+      en: 'This module provides the opt-in functionality for the European General Data Protection Regulation (GDPR)'
+    lang: ''
+    thumbnail: logo.png
+    author: 'OXID eSales AG'
+    url: 'https://www.oxid-esales.com/'
+    email: ''
+    classExtensions:
+      OxidEsales\Eshop\Application\Component\Widget\ArticleDetails: OxidEsales\GdprOptinModule\Component\Widget\ArticleDetails
+      OxidEsales\Eshop\Application\Component\Widget\Review: OxidEsales\GdprOptinModule\Component\Widget\Review
+      OxidEsales\Eshop\Application\Component\UserComponent: OxidEsales\GdprOptinModule\Component\UserComponent
+      OxidEsales\Eshop\Application\Controller\ReviewController: OxidEsales\GdprOptinModule\Controller\ReviewController
+      OxidEsales\Eshop\Application\Controller\ArticleDetailsController: OxidEsales\GdprOptinModule\Controller\ArticleDetailsController
+      OxidEsales\Eshop\Application\Controller\ContactController: OxidEsales\GdprOptinModule\Controller\ContactController
+    events:
+      onActivate: '\OxidEsales\GdprOptinModule\Core\GdprOptinModule::onActivate'
+      onDeactivate: '\OxidEsales\GdprOptinModule\Core\GdprOptinModule::onDeactivate'
+    moduleSettings:
+      blOeGdprOptinInvoiceAddress:
+        group: oegdproptin_settings
+        type: bool
+        value: false
+      blOeGdprOptinDeliveryAddress:
+        group: oegdproptin_settings
+        type: bool
+        value: false
+      blOeGdprOptinUserRegistration:
+        group: oegdproptin_settings
+        type: bool
+        value: false
+      blOeGdprOptinProductReviews:
+        group: oegdproptin_settings
+        type: bool
+        value: false
+      OeGdprOptinContactFormMethod:
+        group: oegdproptin_contact_form
+        type: select
+        value: deletion
+        constraints:
+          - deletion
+          - statistical
+    templateBlocks:
+      -
+        template: form/user.tpl
+        block: user_billing_address_form
+        file: Application/views/blocks/user_invoice_address_form.tpl
+      -
+        template: form/user.tpl
+        block: user_shipping_address_form
+        file: Application/views/blocks/user_shipping_address_form.tpl
+      -
+        template: form/user.tpl
+        block: user_form
+        file: Application/views/blocks/user_address.tpl
+      -
+        template: form/user.tpl
+        block: user
+        file: Application/views/blocks/user.tpl
+      -
+        template: form/user_checkout_change.tpl
+        block: user_checkout_change
+        file: Application/views/blocks/user_checkout_change.tpl
+      -
+        template: form/user_checkout_change.tpl
+        block: user_checkout_shipping_feedback
+        file: Application/views/blocks/user_checkout_shipping_feedback.tpl
+      -
+        template: form/user_checkout_change.tpl
+        block: user_checkout_billing_feedback
+        file: Application/views/blocks/user_checkout_billing_feedback.tpl
+      -
+        template: form/fieldset/user_account.tpl
+        block: user_account_newsletter
+        file: Application/views/blocks/user_account_newsletter.tpl
+      -
+        template: form/contact.tpl
+        block: contact_form_fields
+        file: Application/views/blocks/contact_form_fields.tpl
+      -
+        template: widget/reviews/reviews.tpl
+        block: widget_reviews_form_fields
+        file: Application/views/blocks/widget_reviews_form_fields.tpl
+  bestitamazonpay4oxid:
+    id: bestitamazonpay4oxid
+    path: bestit/amazonpay4oxid
+    version: 3.6.8
+    configured: false
+    title:
+      en: 'Amazon Pay & Login 4 OXID by BESTIT'
+    description:
+      en: "Amazon Pay & Login for OXID eShop<br/>\n        IPN address:  [https://www.yourdomain.com]/index.php?cl=bestitamazonipn[&shp=X]<br/>\n        CRON address: [http://www.yourdomain.com]/index.php?cl=bestitamazoncron[&shp=X]<br/>\n        Allowed JavaScript Origins: [http://www.yourdomain.com]<br/><br/>\n        Please be aware: Setting \"Capture handling\" to \"Direct Capture after Authorize\" requires prior approval from Amazon Pay!<br/>\n\t\tDocumentation: https://bestitcon.zendesk.com/hc/de/articles/115001478125-Dokumentation-AmazonPay4OXID<br/>\n\t\t<b style=\"color: red\">If you update from a previous version you must deactivate and activate the plugin again</b>\n        "
+      de: "Amazon Pay & Login für OXID eShop<br/>\n        IPN address:  [https://www.yourdomain.com]/index.php?cl=bestitamazonipn[&shp=X]<br/>\n        CRON address: [http://www.yourdomain.com]/index.php?cl=bestitamazoncron[&shp=X]<br/>\n        Allowed JavaScript Origins: [http://www.yourdomain.com]<br/><br/>\n        Achtung: Das \"Capture Handling\" darf nur dann auf die Einstellung \"Direktes Capture nach Authorize\" gestellt werden, wenn dafür eine Freigabe seitens Amazon Pay eingeholt wurde!<br/>\n\t\tDokumentation: https://bestitcon.zendesk.com/hc/de/articles/115001478125-Dokumentation-AmazonPay4OXID<br/>\n\t\t<b style=\"color: red\">Wenn Sie das Modul von einer vorhergehenden Version updaten muss das Module deaktivert und erneut aktiviert werden</b>"
+    lang: ''
+    thumbnail: bestitamazonpay4oxid_logo.png
+    author: 'best it GmbH & Co. KG'
+    url: 'http://www.bestit-online.de'
+    email: support@bestit-online.de
+    classesWithoutNamespace:
+      bestitamazonpay4oxid_init: bestit/amazonpay4oxid/application/controllers/admin/bestitamazonpay4oxid_init.php
+      bestitamazonpay4oxid_main: bestit/amazonpay4oxid/application/controllers/admin/bestitamazonpay4oxid_main.php
+      bestitamazonipn: bestit/amazonpay4oxid/application/controllers/bestitamazonipn.php
+      bestitamazoncron: bestit/amazonpay4oxid/application/controllers/bestitamazoncron.php
+      bestitamazonpay4oxid: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxid.php
+      bestitamazonpay4oxidaddressutil: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidaddressutil.php
+      bestitamazonpay4oxidbasketutil: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidbasketutil.php
+      bestitamazonpay4oxidclient: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidclient.php
+      bestitamazonpay4oxidcontainer: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidcontainer.php
+      bestitamazonpay4oxidlogger: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidlogger.php
+      bestitamazonpay4oxidipnhandler: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidipnhandler.php
+      bestitamazonpay4oxidloginclient: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidloginclient.php
+      bestitamazonpay4oxidobjectfactory: bestit/amazonpay4oxid/application/models/bestitamazonpay4oxidobjectfactory.php
+    classExtensions:
+      OxidEsales\Eshop\Core\ViewConfig: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxviewconfig
+      OxidEsales\Eshop\Application\Controller\UserController: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_user
+      OxidEsales\Eshop\Application\Component\BasketComponent: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxcmp_basket
+      OxidEsales\Eshop\Application\Component\UserComponent: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxcmp_user
+      OxidEsales\Eshop\Application\Controller\PaymentController: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_payment
+      OxidEsales\Eshop\Application\Model\DeliverySetList: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxdeliverysetlist
+      OxidEsales\Eshop\Application\Controller\OrderController: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_order
+      OxidEsales\Eshop\Application\Model\Order: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxorder
+      OxidEsales\Eshop\Application\Controller\ThankYouController: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_thankyou
+      OxidEsales\Eshop\Application\Controller\Admin\OrderOverview: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_order_overview
+      OxidEsales\Eshop\Application\Controller\Admin\OrderMain: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_order_main
+      OxidEsales\Eshop\Core\Email: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxemail
+      OxidEsales\Eshop\Core\Session: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxsession
+      OxidEsales\Eshop\Application\Controller\Admin\ModuleConfiguration: bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_module_config
+    events:
+      onActivate: 'bestitAmazonPay4Oxid_init::onActivate'
+      onDeactivate: 'bestitAmazonPay4Oxid_init::onDeactivate'
+    moduleSettings:
+      blAmazonSandboxActive:
+        group: bestitAmazonPay4OxidSettings
+        type: bool
+        value: true
+        position: 1
+      sAmazonSellerId:
+        group: bestitAmazonPay4OxidSettings
+        type: str
+        value: ''
+        position: 2
+      sAmazonAWSAccessKeyId:
+        group: bestitAmazonPay4OxidSettings
+        type: str
+        value: ''
+        position: 3
+      sAmazonSignature:
+        group: bestitAmazonPay4OxidSettings
+        type: password
+        value: ''
+        position: 4
+      sAmazonCronSecretKey:
+        group: bestitAmazonPay4OxidSettings
+        type: str
+        value: ''
+        position: 5
+      blGenerateNewAmazonCronSecretKey:
+        group: bestitAmazonPay4OxidSettings
+        type: bool
+        value: false
+        position: 6
+      blAmazonLogging:
+        group: bestitAmazonPay4OxidSettings
+        type: bool
+        value: true
+        position: 7
+      blAmazonLoggingLevel:
+        group: bestitAmazonPay4OxidSettings
+        type: select
+        value: error
+        constraints:
+          - debug
+          - error
+      blAmazonLoginActive:
+        group: bestitAmazonPay4OxidLoginSettings
+        type: bool
+        value: true
+        position: 1
+      sAmazonLoginClientId:
+        group: bestitAmazonPay4OxidLoginSettings
+        type: str
+        value: ''
+        position: 2
+      sAmazonLoginButtonStyle:
+        group: bestitAmazonPay4OxidLoginSettings
+        type: select
+        value: LwA-Gold
+        constraints:
+          - LwA-LightGray
+          - LwA-DarkGray
+          - LwA-Gold
+          - Login-LightGray
+          - Login-DarkGray
+          - Login-Gold
+        position: 3
+      sAmazonPayButtonStyle:
+        group: bestitAmazonPay4OxidLoginSettings
+        type: select
+        value: PwA-Gold
+        constraints:
+          - PwA-LightGray
+          - PwA-DarkGray
+          - PwA-Gold
+          - Pay-LightGray
+          - Pay-DarkGray
+          - Pay-Gold
+        position: 4
+      sAmazonLocale:
+        group: bestitAmazonPay4OxidLocalization
+        type: select
+        value: DE
+        constraints:
+          - DE
+          - UK
+          - US
+        position: 1
+      aAmazonLanguages:
+        group: bestitAmazonPay4OxidLanguages
+        type: aarr
+        value:
+          en: en-GB
+          de: de-DE
+          fr: fr-FR
+          it: it-IT
+          es: es-ES
+        position: 1
+      sAmazonMode:
+        group: bestitAmazonPay4OxidConfiguration
+        type: select
+        value: OPTIMIZED_FLOW
+        constraints:
+          - OPTIMIZED_FLOW
+          - BASIC_FLOW
+        position: 1
+      sAmazonAuthorize:
+        group: bestitAmazonPay4OxidConfiguration
+        type: select
+        value: IPN
+        constraints:
+          - IPN
+          - CRON
+        position: 2
+      sAmazonCapture:
+        group: bestitAmazonPay4OxidConfiguration
+        type: select
+        value: SHIPPED
+        constraints:
+          - SHIPPED
+          - DIRECT
+        position: 3
+      blAmazonERP:
+        group: bestitAmazonPay4OxidConfiguration
+        type: bool
+        value: false
+        position: 4
+      sAmazonERPModeStatus:
+        group: bestitAmazonPay4OxidConfiguration
+        type: str
+        value: AP-Pend
+        position: 5
+      sSandboxSimulation:
+        group: bestitAmazonPay4OxidConfiguration
+        type: select
+        value: ''
+        constraints:
+          - "\n                "
+          - "SetOrderReferenceDetailsPaymentMethodNotAllowed\n                "
+          - "CloseOrderReferenceAmazonClosed\n                "
+          - "AuthorizeInvalidPaymentMethod\n                "
+          - "AuthorizeAmazonRejected\n                "
+          - "AuthorizeTransactionTimedOut\n                "
+          - "AuthorizeExpiredUnused\n                "
+          - "AuthorizeAmazonClosed\n                "
+          - "CapturePending\n                "
+          - "CaptureAmazonRejected\n                "
+          - "CaptureAmazonClosed\n                "
+          - RefundAmazonRejected
+        position: 6
+      blBestitAmazonPay4OxidEnableMultiCurrency:
+        group: bestitAmazonPay4OxidConfiguration
+        type: bool
+        value: false
+        position: 7
+      blShowAmazonPayButtonInBasketFlyout:
+        group: bestitAmazonPay4OxidConfiguration
+        type: bool
+        value: true
+        position: 8
+      blShowAmazonPayButtonAtDetails:
+        group: bestitAmazonPay4OxidConfiguration
+        type: bool
+        value: true
+        position: 9
+      blShowAmazonPayButtonAtCartPopup:
+        group: bestitAmazonPay4OxidConfiguration
+        type: bool
+        value: true
+        position: 10
+      aAmazonReverseOrderCountries:
+        group: bestitAmazonPay4OxidConfiguration
+        type: arr
+        value:
+          - DE
+          - AT
+          - FR
+        position: 11
+    templateBlocks:
+      -
+        template: page/checkout/basket.tpl
+        block: basket_btn_next_top
+        file: application/blocks/bestitamazonpay4oxid_basket.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: basket_btn_next_bottom
+        file: application/blocks/bestitamazonpay4oxid_basket.tpl
+      -
+        template: page/checkout/user.tpl
+        block: checkout_user_main
+        file: application/blocks/bestitamazonpay4oxid_user.tpl
+      -
+        template: page/checkout/inc/options.tpl
+        block: checkout_user_options
+        file: application/blocks/bestitamazonpay4oxid_paybutton.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: select_payment
+        file: application/blocks/bestitamazonpay4oxid_payment.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: checkout_payment_nextstep
+        file: application/blocks/bestitamazonpay4oxid_paybutton_nextstep.tpl
+      -
+        template: page/checkout/order.tpl
+        block: checkout_order_address
+        file: application/blocks/bestitamazonpay4oxid_order_address.tpl
+      -
+        template: page/checkout/order.tpl
+        block: shippingAndPayment
+        file: application/blocks/bestitamazonpay4oxid_order_payment.tpl
+      -
+        template: page/checkout/order.tpl
+        block: checkout_order_btn_confirm_bottom
+        file: application/blocks/bestitamazonpay4oxid_order_confirm_button.tpl
+      -
+        template: layout/footer.tpl
+        block: footer_main
+        file: application/blocks/bestitamazonpay4oxid_loginbutton.tpl
+      -
+        template: module_config.tpl
+        block: admin_module_config_group
+        file: application/blocks/bestitamazonpay4oxid_module_config.tpl
+      -
+        template: page/checkout/basket.tpl
+        block: mb_basket_btn_next_bottom
+        file: application/blocks/bestitamazonpay4oxid_paybutton.tpl
+      -
+        template: page/checkout/payment.tpl
+        block: mb_select_payment
+        file: application/blocks/bestitamazonpay4oxid_payment.tpl
+      -
+        template: page/checkout/thankyou.tpl
+        block: checkout_thankyou_info
+        file: application/blocks/bestitamazonpay4oxid_thankyou.tpl
+      -
+        template: page/details/inc/productmain.tpl
+        block: details_productmain_tobasket
+        file: application/blocks/bestitamazonpay4oxid_detailsbutton.tpl
+      -
+        template: module_config.tpl
+        block: admin_module_config_form
+        file: application/blocks/bestitamazonpay4oxid_module_config_form.tpl
+      -
+        template: widget/minibasket/minibasket.tpl
+        block: widget_minibasket_total
+        file: application/blocks/bestitamazonpay4oxid_minibasket.tpl
+      -
+        template: widget/minibasket/minibasket.tpl
+        block: dd_layout_page_header_icon_menu_minibasket_functions
+        file: application/blocks/bestitamazonpay4oxid_minibasket_functions.tpl
+    templates:
+      bestitamazonpay4oxidcron.tpl: bestit/amazonpay4oxid/application/views/cron/bestitamazonpay4oxidcron.tpl
+      bestitamazonpay4oxid_main.tpl: bestit/amazonpay4oxid/application/views/admin/tpl/bestitamazonpay4oxid_main.tpl
+      bestitamazonpay4oxid_invalidpayment.tpl: bestit/amazonpay4oxid/application/views/azure/tpl/email/html/bestitamazonpay4oxid_invalidpayment.tpl
+      bestitamazonpay4oxid_rejectedpayment.tpl: bestit/amazonpay4oxid/application/views/azure/tpl/email/html/bestitamazonpay4oxid_rejectedpayment.tpl
+      bestitamazonpay4oxid_paybutton.tpl: bestit/amazonpay4oxid/application/views/bestitamazonpay4oxid_paybutton.tpl
+      bestitamazonpay4oxid_src.tpl: bestit/amazonpay4oxid/application/views/bestitamazonpay4oxid_src.tpl
+  ddoewysiwyg:
+    id: ddoewysiwyg
+    path: ddoe/wysiwyg
+    version: 2.4.1
+    configured: false
+    title:
+      en: 'WYSIWYG Editor + Mediathek'
+    description:
+      de: ''
+      en: ''
+    lang: ''
+    thumbnail: logo.png
+    author: 'OXID eSales AG & digidesk - media solutions'
+    url: 'http://www.oxid-esales.com'
+    email: info@oxid-esales.com
+    classExtensions:
+      OxidEsales\Eshop\Application\Controller\TextEditorHandler: OxidEsales\WysiwygModule\Application\Controller\TextEditorHandler
+      OxidEsales\Eshop\Core\ViewConfig: OxidEsales\WysiwygModule\Core\ViewConfig
+      OxidEsales\Eshop\Core\Language: OxidEsales\WysiwygModule\Core\Language
+      OxidEsales\Eshop\Core\Utils: OxidEsales\WysiwygModule\Core\Utils
+    controllers:
+      ddoewysiwyglangjs: OxidEsales\WysiwygModule\Application\Controller\WysiwygLangJs
+      ddoewysiwygmedia_view: OxidEsales\WysiwygModule\Application\Controller\Admin\WysiwygMedia
+      ddoewysiwygmedia_wrapper: OxidEsales\WysiwygModule\Application\Controller\Admin\WysiwygMediaWrapper
+    events:
+      onActivate: '\OxidEsales\WysiwygModule\Core\Events::onActivate'
+      onDeactivate: '\OxidEsales\WysiwygModule\Core\Events::onDeactivate'
+    templates:
+      ddoewysiwyg.tpl: ddoe/wysiwyg/Application/views/admin/tpl/ddoewysiwyg.tpl
+      dialog/ddoewysiwygmedia.tpl: ddoe/wysiwyg/Application/views/admin/tpl/dialog/ddoewysiwygmedia.tpl
+      dialog/ddoewysiwygmedia_wrapper.tpl: ddoe/wysiwyg/Application/views/admin/tpl/dialog/ddoewysiwygmedia_wrapper.tpl
+moduleChains:
+  classExtensions:
+    OxidEsales\Eshop\Application\Model\Basket:
+      - TopConcepts\Klarna\Model\KlarnaBasket
+      - fc/fcpayone/extend/application/models/fcPayOneBasket
+      - OxidEsales\PayPalModule\Model\Basket
+    OxidEsales\Eshop\Application\Model\User:
+      - TopConcepts\Klarna\Model\KlarnaUser
+      - fc/fcpayone/extend/application/models/fcPayOneUser
+      - OxidEsales\PayPalModule\Model\User
+    OxidEsales\Eshop\Application\Model\Article:
+      - TopConcepts\Klarna\Model\KlarnaArticle
+      - OxidEsales\PayPalModule\Model\Article
+    OxidEsales\Eshop\Application\Model\Order:
+      - TopConcepts\Klarna\Model\KlarnaOrder
+      - fc/fcpayone/extend/application/models/fcPayOneOrder
+      - OxidEsales\PayPalModule\Model\Order
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxorder
+    OxidEsales\Eshop\Application\Model\Address:
+      - TopConcepts\Klarna\Model\KlarnaAddress
+      - fc/fcpayone/extend/application/models/fcPayOneAddress
+      - OxidEsales\PayPalModule\Model\Address
+    OxidEsales\Eshop\Application\Model\Payment:
+      - TopConcepts\Klarna\Model\KlarnaPayment
+      - fc/fcpayone/extend/application/models/fcPayOnePayment
+    OxidEsales\Eshop\Application\Model\CountryList:
+      - TopConcepts\Klarna\Model\KlarnaCountryList
+    OxidEsales\Eshop\Application\Model\OrderArticle:
+      - TopConcepts\Klarna\Model\KlarnaOrderArticle
+      - fc/fcpayone/extend/application/models/fcPayOneOrderarticle
+    OxidEsales\Eshop\Application\Model\UserPayment:
+      - TopConcepts\Klarna\Model\KlarnaUserPayment
+    OxidEsales\Eshop\Application\Controller\ThankYouController:
+      - TopConcepts\Klarna\Controller\KlarnaThankYouController
+      - fc/fcpayone/extend/application/controllers/fcPayOneThankyouView
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_thankyou
+    OxidEsales\Eshop\Core\ViewConfig:
+      - TopConcepts\Klarna\Controller\KlarnaViewConfig
+      - OxidProfessionalServices\Usercentrics\Core\ViewConfig
+      - fc/fcpayone/extend/core/fcPayOneViewConf
+      - OxidEsales\PayPalModule\Core\ViewConfig
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxviewconfig
+      - OxidEsales\WysiwygModule\Core\ViewConfig
+    OxidEsales\Eshop\Application\Controller\OrderController:
+      - TopConcepts\Klarna\Controller\KlarnaOrderController
+      - fc/fcpayone/extend/application/controllers/fcPayOneOrderView
+      - OxidEsales\PayPalModule\Controller\OrderController
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_order
+    OxidEsales\Eshop\Application\Controller\UserController:
+      - TopConcepts\Klarna\Controller\KlarnaUserController
+      - fc/fcpayone/extend/application/controllers/fcPayOneUserView
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_user
+    OxidEsales\Eshop\Application\Controller\PaymentController:
+      - TopConcepts\Klarna\Controller\KlarnaPaymentController
+      - fc/fcpayone/extend/application/controllers/fcPayOnePaymentView
+      - OxidEsales\PayPalModule\Controller\PaymentController
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_payment
+    OxidEsales\Eshop\Application\Controller\BasketController:
+      - TopConcepts\Klarna\Controller\KlarnaBasketController
+      - fc/fcpayone/extend/application/controllers/fcPayOneBasketView
+    OxidEsales\Eshop\Application\Controller\Admin\OrderAddress:
+      - TopConcepts\Klarna\Controller\Admin\KlarnaOrderAddress
+    OxidEsales\Eshop\Application\Controller\Admin\OrderList:
+      - TopConcepts\Klarna\Controller\Admin\KlarnaOrderList
+      - OxidEsales\PayPalModule\Controller\Admin\OrderList
+    OxidEsales\Eshop\Application\Controller\Admin\OrderArticle:
+      - TopConcepts\Klarna\Controller\Admin\KlarnaOrderArticle
+    OxidEsales\Eshop\Application\Controller\Admin\OrderMain:
+      - TopConcepts\Klarna\Controller\Admin\KlarnaOrderMain
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_order_main
+    OxidEsales\Eshop\Application\Controller\Admin\OrderOverview:
+      - TopConcepts\Klarna\Controller\Admin\KlarnaOrderOverview
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_order_overview
+    OxidEsales\Eshop\Application\Controller\Admin\PaymentMain:
+      - TopConcepts\Klarna\Controller\Admin\KlarnaPaymentMain
+      - fc/fcpayone/extend/application/controllers/admin/fcPayOnePaymentMain
+    OxidEsales\Eshop\Application\Component\BasketComponent:
+      - TopConcepts\Klarna\Component\KlarnaBasketComponent
+      - OxidEsales\PayPalModule\Component\BasketComponent
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxcmp_basket
+    OxidEsales\Eshop\Application\Component\UserComponent:
+      - TopConcepts\Klarna\Component\KlarnaUserComponent
+      - OxidEsales\GdprOptinModule\Component\UserComponent
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxcmp_user
+    OxidEsales\Eshop\Application\Component\Widget\ServiceMenu:
+      - TopConcepts\Klarna\Component\Widgets\KlarnaServiceMenu
+    OxidEsales\Eshop\Core\Config:
+      - TopConcepts\Klarna\Core\Config
+    OxidEsales\Eshop\Application\Model\PaymentGateway:
+      - TopConcepts\Klarna\Model\PaymentGateway
+      - fc/fcpayone/extend/application/models/fcPayOnePaymentgateway
+      - OxidEsales\PayPalModule\Model\PaymentGateway
+    OxidEsales\Eshop\Core\ShopControl:
+      - TopConcepts\Klarna\Core\KlarnaShopControl
+    OxidEsales\Eshop\Core\ViewHelper\JavaScriptRenderer:
+      - OxidProfessionalServices\Usercentrics\Core\ScriptRenderer
+    OxidEsales\Eshop\Application\Model\BasketItem:
+      - fc/fcpayone/extend/application/models/fcPayOneBasketitem
+    OxidEsales\Eshop\Application\Component\Widget\ArticleDetails:
+      - OxidEsales\PayPalModule\Component\Widget\ArticleDetails
+      - OxidEsales\GdprOptinModule\Component\Widget\ArticleDetails
+    OxidEsales\Eshop\Application\Controller\WrappingController:
+      - OxidEsales\PayPalModule\Controller\WrappingController
+    OxidEsales\Eshop\Application\Controller\Admin\DeliverySetMain:
+      - OxidEsales\PayPalModule\Controller\Admin\DeliverySetMain
+    OxidEsales\Eshop\Application\Model\PaymentList:
+      - OxidEsales\PayPalModule\Model\PaymentList
+    OxidEsales\Eshop\Application\Component\Widget\Review:
+      - OxidEsales\GdprOptinModule\Component\Widget\Review
+    OxidEsales\Eshop\Application\Controller\ReviewController:
+      - OxidEsales\GdprOptinModule\Controller\ReviewController
+    OxidEsales\Eshop\Application\Controller\ArticleDetailsController:
+      - OxidEsales\GdprOptinModule\Controller\ArticleDetailsController
+    OxidEsales\Eshop\Application\Controller\ContactController:
+      - OxidEsales\GdprOptinModule\Controller\ContactController
+    OxidEsales\Eshop\Application\Model\DeliverySetList:
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxdeliverysetlist
+    OxidEsales\Eshop\Core\Email:
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxemail
+    OxidEsales\Eshop\Core\Session:
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxsession
+    OxidEsales\Eshop\Application\Controller\Admin\ModuleConfiguration:
+      - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_module_config
+    OxidEsales\Eshop\Application\Controller\TextEditorHandler:
+      - OxidEsales\WysiwygModule\Application\Controller\TextEditorHandler
+    OxidEsales\Eshop\Core\Language:
+      - OxidEsales\WysiwygModule\Core\Language
+    OxidEsales\Eshop\Core\Utils:
+      - OxidEsales\WysiwygModule\Core\Utils
