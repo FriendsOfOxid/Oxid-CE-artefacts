@@ -1798,6 +1798,7 @@
             "support": {
                 "source": "https://github.com/OXID-eSales/flow_theme/tree/v3.8.0"
             },
+            "abandoned": "oxid-esales/wave-theme",
             "install-path": "../oxid-esales/flow-theme"
         },
         {
