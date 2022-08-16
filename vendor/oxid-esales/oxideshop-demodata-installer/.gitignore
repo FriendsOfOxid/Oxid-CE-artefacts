@@ -1,0 +1,12 @@
+# Composer
+/vendor/
+/composer.lock
+
+# IDE
+/.idea/
+
+# OS
+.DS_Store
+
+# Temporary folders
+/tests/tmp/
