@@ -1,0 +1,40 @@
+{
+    "name": "oxid-esales/paypal-module",
+    "description": "This is the PayPal module for the OXID eShop.",
+    "type": "oxideshop-module",
+    "keywords": ["oxid", "modules", "eShop"],
+    "homepage": "https://www.oxid-esales.com/en/home.html",
+    "license": [
+        "GPL-3.0-only"
+    ],
+    "extra": {
+        "oxideshop": {
+            "blacklist-filter": [
+                "documentation/**/*.*",
+                "CHANGELOG.md",
+                "composer.json",
+                "CONTRIBUTING.md",
+                "README.md"
+            ],
+            "target-directory": "oe/oepaypal"
+        }
+    },
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "lib-curl": ">=7.26.0",
+        "lib-openssl": ">=1.0.1",
+        "ext-curl": "*",
+        "ext-openssl": "*"
+    },
+    "require-dev": {
+         "codeception/module-rest": "^1.4.2",
+         "codeception/module-phpbrowser": "^1.0.2",
+         "codeception/module-db": "^1.1.0",
+         "symfony/dotenv": "^5.1"
+     },
+    "autoload": {
+        "psr-4": {
+            "OxidEsales\\PayPalModule\\": "../../../source/modules/oe/oepaypal"
+        }
+    }
+}

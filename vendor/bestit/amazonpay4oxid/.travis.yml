@@ -1,0 +1,49 @@
+sudo: required
+language: php
+services:
+  - docker
+env:
+  - TRAVIS_ERROR_LEVEL=22519 CACHE_FOLDER=$HOME/docker-images CACHE_FILE=${CACHE_FOLDER}/docker-web.tgz
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+before_script:
+  - if [[ -f ${CACHE_FILE} ]]; then
+        docker load -i ${CACHE_FILE};
+    else
+        mkdir -p ${CACHE_FOLDER};
+        docker-compose build;
+        docker save web | gzip -c > ${CACHE_FILE};
+    fi
+script:
+  - docker-compose up -d
+  - docker-compose exec web /bin/bash -c "composer install && vendor/bin/phpcsoxid --colors"
+  - docker-compose exec web /bin/bash -c "chmod +x ./scripts/build.sh"
+  - docker-compose exec web /bin/bash -c "./scripts/build.sh 5.3"
+  - docker-compose exec web /bin/bash -c "./scripts/build.sh dev-b-6.0-ce"
+  - docker-compose exec web /bin/bash -c "./scripts/build.sh dev-b-6.1-ce"
+  - docker-compose exec web /bin/bash -c "./scripts/build.sh dev-b-6.2-ce"
+before_deploy:
+  - ssh-keyscan $DEPLOYMENT_SERVER >> $HOME/.ssh/known_hosts
+  - (umask  077 ; echo $DEPLOYMENT_SSH_KEY | base64 --decode > /tmp/deploy_rsa)
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/deploy_rsa
+  - ssh-add /tmp/deploy_rsa
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: ./scripts/deploy.sh
+    on:
+      branch: develop
+  - provider: script
+    skip_cleanup: true
+    script: ./scripts/deploy-package.sh ${GH_API_KEY} ${TRAVIS_TAG}
+    on:
+      tags: true
+
+cache:
+  bundler: true
+  directories:
+    - ${CACHE_FOLDER}
