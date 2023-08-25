@@ -180,60 +180,6 @@ modules:
       tcklarna_country_creds.tpl: tc/tcklarna/views/admin/tpl/tcklarna_country_creds.tpl
       tcklarna_header.tpl: tc/tcklarna/views/admin/tpl/tcklarna_header.tpl
       tcklarna_lang_spec_conf.tpl: tc/tcklarna/views/admin/tpl/tcklarna_lang_spec_conf.tpl
-  oxps_usercentrics:
-    id: oxps_usercentrics
-    path: oxps/usercentrics
-    version: 1.2.1
-    configured: false
-    title:
-      en: 'OXID Cookie Management powered by usercentrics'
-    description:
-      de: "Die Usercentrics Consent Management Platform (CMP) ermöglicht Ihnen, Ihre Marketing- und Datenstrategie\n                 mit rechtlichen Anforderungen in Einklang zu bringen.</p>\n                 <h2>Registrieren Sie sich deshalb jetzt bei Usercentrics</h2>  \n                 <form target=\"_blank\" method=\"GET\" action=\"https://usercentrics.com/de/preise/?partnerid=16967#business-paket\">\n                     <input type=\"hidden\" name=\"partnerid\" value=\"16967\">\n                     <input style=\"background: #0A2; color: #fff; font-weight: bold;\" type=\"submit\" value=\"Jetzt registrieren\">\n                     <p>\n                         Sollte ein anderer Mitarbeiter in Ihrem Unternehmen die Registrierung durchführen, bitte dabei zwingend die OXID Partner-ID 16967 angeben, um die Integration vollständig nutzen zu können. Zu diesem Zweck können Sie diesen Link weitergeben: https://usercentrics.com/de/preise/?partnerid=16967#business-paket\n                     </p>\n                 </form>\n                 "
-      en: "The Usercentrics Consent Management Platform (CMP) enables you to harmonize your marketing and data \n                 strategy with legal requirements.</p>\n                 <h2>Register now for Usercentrics</h2>  \n                 <form target=\"_blank\" method=\"GET\" action=\"https://usercentrics.com/pricing/?partnerid=16967#business-package\">               \n                     <input type=\"hidden\" name=\"partnerid\" value=\"16967\">\n                     <input style=\"background: #0A2; color: #fff; font-weight: bold;\" type=\"submit\" value=\"Register Now\">\n                     <p>\n                         If another employee in your company registers, please make sure to enter the OXID partner ID 16967 in order to be able to fully use the integration. For that reason you can forward this link to them: https://usercentrics.com/pricing/?partnerid=16967#business-package\n                     </p>\n                 </form>\n                 "
-    lang: ''
-    thumbnail: ''
-    author: 'OXID Professional Services'
-    url: ''
-    email: ''
-    classExtensions:
-      OxidEsales\Eshop\Core\ViewHelper\JavaScriptRenderer: OxidProfessionalServices\Usercentrics\Core\ScriptRenderer
-      OxidEsales\Eshop\Core\ViewConfig: OxidProfessionalServices\Usercentrics\Core\ViewConfig
-    moduleSettings:
-      usercentricsId:
-        group: usercentrics_main
-        type: str
-        value: ''
-      smartDataProtectorActive:
-        group: usercentrics_advanced
-        type: bool
-        value: true
-      smartDataProtectorDeactivateBlocking:
-        group: usercentrics_advanced
-        type: str
-        value: ''
-      usercentricsMode:
-        group: usercentrics_advanced
-        type: select
-        value: CmpV2
-        constraints:
-          - CmpV1
-          - CmpV2
-          - CmpV2Legacy
-          - CmpV2Tcf
-          - CmpV2TcfLegacy
-          - Custom
-      developmentAutomaticConsent:
-        type: bool
-        value: false
-    templateBlocks:
-      -
-        template: layout/base.tpl
-        block: base_js
-        file: src/views/blocks/base_js.tpl
-      -
-        template: layout/base.tpl
-        block: head_meta_description
-        file: src/views/blocks/head_meta_description.tpl
   fcpayone:
     id: fcpayone
     path: fc/fcpayone
@@ -425,6 +371,60 @@ modules:
       fcpayone_status_forwarding.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_status_forwarding.tpl
       fcpayone_status_mapping.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_status_mapping.tpl
       fcpayone_error_mapping.tpl: fc/fcpayone/application/views/admin/tpl/fcpayone_error_mapping.tpl
+  oxps_usercentrics:
+    id: oxps_usercentrics
+    path: oxps/usercentrics
+    version: 1.2.1
+    configured: false
+    title:
+      en: 'OXID Cookie Management powered by usercentrics'
+    description:
+      de: "Die Usercentrics Consent Management Platform (CMP) ermöglicht Ihnen, Ihre Marketing- und Datenstrategie\n                 mit rechtlichen Anforderungen in Einklang zu bringen.</p>\n                 <h2>Registrieren Sie sich deshalb jetzt bei Usercentrics</h2>  \n                 <form target=\"_blank\" method=\"GET\" action=\"https://usercentrics.com/de/preise/?partnerid=16967#business-paket\">\n                     <input type=\"hidden\" name=\"partnerid\" value=\"16967\">\n                     <input style=\"background: #0A2; color: #fff; font-weight: bold;\" type=\"submit\" value=\"Jetzt registrieren\">\n                     <p>\n                         Sollte ein anderer Mitarbeiter in Ihrem Unternehmen die Registrierung durchführen, bitte dabei zwingend die OXID Partner-ID 16967 angeben, um die Integration vollständig nutzen zu können. Zu diesem Zweck können Sie diesen Link weitergeben: https://usercentrics.com/de/preise/?partnerid=16967#business-paket\n                     </p>\n                 </form>\n                 "
+      en: "The Usercentrics Consent Management Platform (CMP) enables you to harmonize your marketing and data \n                 strategy with legal requirements.</p>\n                 <h2>Register now for Usercentrics</h2>  \n                 <form target=\"_blank\" method=\"GET\" action=\"https://usercentrics.com/pricing/?partnerid=16967#business-package\">               \n                     <input type=\"hidden\" name=\"partnerid\" value=\"16967\">\n                     <input style=\"background: #0A2; color: #fff; font-weight: bold;\" type=\"submit\" value=\"Register Now\">\n                     <p>\n                         If another employee in your company registers, please make sure to enter the OXID partner ID 16967 in order to be able to fully use the integration. For that reason you can forward this link to them: https://usercentrics.com/pricing/?partnerid=16967#business-package\n                     </p>\n                 </form>\n                 "
+    lang: ''
+    thumbnail: ''
+    author: 'OXID Professional Services'
+    url: ''
+    email: ''
+    classExtensions:
+      OxidEsales\Eshop\Core\ViewHelper\JavaScriptRenderer: OxidProfessionalServices\Usercentrics\Core\ScriptRenderer
+      OxidEsales\Eshop\Core\ViewConfig: OxidProfessionalServices\Usercentrics\Core\ViewConfig
+    moduleSettings:
+      usercentricsId:
+        group: usercentrics_main
+        type: str
+        value: ''
+      smartDataProtectorActive:
+        group: usercentrics_advanced
+        type: bool
+        value: true
+      smartDataProtectorDeactivateBlocking:
+        group: usercentrics_advanced
+        type: str
+        value: ''
+      usercentricsMode:
+        group: usercentrics_advanced
+        type: select
+        value: CmpV2
+        constraints:
+          - CmpV1
+          - CmpV2
+          - CmpV2Legacy
+          - CmpV2Tcf
+          - CmpV2TcfLegacy
+          - Custom
+      developmentAutomaticConsent:
+        type: bool
+        value: false
+    templateBlocks:
+      -
+        template: layout/base.tpl
+        block: base_js
+        file: src/views/blocks/base_js.tpl
+      -
+        template: layout/base.tpl
+        block: head_meta_description
+        file: src/views/blocks/head_meta_description.tpl
   oepaypal:
     id: oepaypal
     path: oe/oepaypal
@@ -1198,8 +1198,8 @@ moduleChains:
       - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_thankyou
     OxidEsales\Eshop\Core\ViewConfig:
       - TopConcepts\Klarna\Controller\KlarnaViewConfig
-      - OxidProfessionalServices\Usercentrics\Core\ViewConfig
       - fc/fcpayone/extend/core/fcPayOneViewConf
+      - OxidProfessionalServices\Usercentrics\Core\ViewConfig
       - OxidEsales\PayPalModule\Core\ViewConfig
       - bestit/amazonpay4oxid/ext/bestitamazonpay4oxid_oxviewconfig
       - OxidEsales\WysiwygModule\Core\ViewConfig
@@ -1254,10 +1254,10 @@ moduleChains:
       - OxidEsales\PayPalModule\Model\PaymentGateway
     OxidEsales\Eshop\Core\ShopControl:
       - TopConcepts\Klarna\Core\KlarnaShopControl
-    OxidEsales\Eshop\Core\ViewHelper\JavaScriptRenderer:
-      - OxidProfessionalServices\Usercentrics\Core\ScriptRenderer
     OxidEsales\Eshop\Application\Model\BasketItem:
       - fc/fcpayone/extend/application/models/fcPayOneBasketitem
+    OxidEsales\Eshop\Core\ViewHelper\JavaScriptRenderer:
+      - OxidProfessionalServices\Usercentrics\Core\ScriptRenderer
     OxidEsales\Eshop\Application\Component\Widget\ArticleDetails:
       - OxidEsales\PayPalModule\Component\Widget\ArticleDetails
       - OxidEsales\GdprOptinModule\Component\Widget\ArticleDetails
